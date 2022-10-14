@@ -6,6 +6,7 @@ public class TrialScript : MonoBehaviour
 {
 
     //hejsa
+    //Friyay!
     // Start is called before the first frame update
     void Start()
     {
