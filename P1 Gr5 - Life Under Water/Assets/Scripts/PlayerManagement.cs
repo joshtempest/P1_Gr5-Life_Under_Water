@@ -12,7 +12,6 @@ public class PlayerManagement : MonoBehaviour
     int score = 1;  //This variable keeps track of the score
     public float sizeIncrement; //Determins amount of size increase (Lower number = Bigger increase)
     float playerSize; //Used to Determine the size of the player object.
-    int points;
 
     // Start is called before the first frame update
     void Start()
@@ -31,9 +30,9 @@ public class PlayerManagement : MonoBehaviour
     {
         if (other.gameObject.tag == "Object") //If collided object have the tag "Object"
         {
-            points = 1;
+            int points = 1; //Local variable that determines how how the score should increase
 
-            score = ComputeScore(score, points);
+            score = ComputeScore(score, points); //Calls the 'ComputeScore' function to calculate the score
 
             SizeController();
             Destroy(other.gameObject); //Destroy the collided object
@@ -41,24 +40,25 @@ public class PlayerManagement : MonoBehaviour
 
         if (other.gameObject.tag == "Object2") //If collided object have the tag "Object"
         {
-            points = 10;
+            int points = 10; //Local variable that determines how how the score should increase
 
-            score = ComputeScore(score, points);
+            score = ComputeScore(score, points); //Calls the 'ComputeScore' function to calculate the score
 
             SizeController();
             Destroy(other.gameObject); //Destroy the collided object
         }
-
     }
 
-    int ComputeScore(int a, int b) //Adds the points variable to the score
+    //This function is responsible for adding the points variable to the score
+    int ComputeScore(int a, int b)
     {
         int computedScore = a + b;
 
         return computedScore;
     }
 
-    void SizeController()
+    //This function is responsible for adjusting the size of the player object
+    void SizeController() 
     {
         playerSize = 1 + (score / sizeIncrement); // Determines the size of the player object. Devides score by sizeUp to control growth of the player object
         Vector3 sizeVector = new Vector3(playerSize, playerSize, 0); //Creates a new vecter called "sizeVector" which is based on the size variable.
