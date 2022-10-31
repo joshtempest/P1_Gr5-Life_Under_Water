@@ -22,7 +22,7 @@ public class PlayerManagement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10));
+        
     }
 
     //This function deals with everything happening when colliding with an object
