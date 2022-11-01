@@ -7,7 +7,6 @@ using UnityEngine;
 public class PlayerManagement : MonoBehaviour
 {
     //Based on "How to make an object follow the mouse in Unity" by Karolio: https://www.youtube.com/watch?v=mF_BB_YsyDk
-    Camera cam;
 
     int score = 1;  //This variable keeps track of the score
     public float sizeIncrement; //Determins amount of size increase (Lower number = Bigger increase)
@@ -16,7 +15,7 @@ public class PlayerManagement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cam = GameObject.Find("Main Camera").GetComponent<Camera>();
+
     }
 
     // Update is called once per frame
