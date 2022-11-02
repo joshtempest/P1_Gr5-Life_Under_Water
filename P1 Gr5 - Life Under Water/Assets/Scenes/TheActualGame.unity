@@ -547,29 +547,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec536a7718376554185e4a856d5ae230, type: 3}
---- !u!1 &823134005 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 823134005, guid: bcfe7f4a24978dd48bc9d97e69a03f59, type: 3}
-  m_PrefabInstance: {fileID: 1082900378}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &823134009
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 823134005}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 120349df42b35be409378813fcc2c5b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levels:
-  - {fileID: 0}
-  mainCamera: {fileID: 0}
-  screenBounds: {x: 0, y: 0}
-  choke: 0
-  scrollSpeed: 0
 --- !u!224 &1043003033 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3881087803549984436, guid: ec536a7718376554185e4a856d5ae230, type: 3}
@@ -593,26 +570,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 70363305, guid: bcfe7f4a24978dd48bc9d97e69a03f59, type: 3}
-      propertyPath: speed
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 70363305, guid: bcfe7f4a24978dd48bc9d97e69a03f59, type: 3}
+    - target: {fileID: 3726404025996278163, guid: bcfe7f4a24978dd48bc9d97e69a03f59, type: 3}
       propertyPath: variableJoystick
       value: 
       objectReference: {fileID: 1043003034}
-    - target: {fileID: 168036776397058736, guid: bcfe7f4a24978dd48bc9d97e69a03f59, type: 3}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2403665656185714180, guid: bcfe7f4a24978dd48bc9d97e69a03f59, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3726404025996278163, guid: bcfe7f4a24978dd48bc9d97e69a03f59, type: 3}
-      propertyPath: sizeIncrement
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 3964741546090976153, guid: bcfe7f4a24978dd48bc9d97e69a03f59, type: 3}
       propertyPath: m_RootOrder
       value: 0

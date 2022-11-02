@@ -6,11 +6,16 @@ using UnityEngine;
 
 public class PlayerManagement : MonoBehaviour
 {
-    //Based on "How to make an object follow the mouse in Unity" by Karolio: https://www.youtube.com/watch?v=mF_BB_YsyDk
+    //Loosly based on "How to make an object follow the mouse in Unity" by Karolio: https://www.youtube.com/watch?v=mF_BB_YsyDk
 
     int score = 1;  //This variable keeps track of the score
     public float sizeIncrement; //Determins amount of size increase (Lower number = Bigger increase)
     float playerSize; //Used to Determine the size of the player object.
+
+    public float speed; //Determines the speed of the player object.
+    public VariableJoystick variableJoystick; //Calls the VariableJoystick script which is attached to the joystick itself.
+    public Rigidbody2D RIGIDBODY; //Calls the rigidbody of the player object.
+
 
     // Start is called before the first frame update
     void Start()
@@ -66,4 +71,10 @@ public class PlayerManagement : MonoBehaviour
         Debug.Log("Player Size = " + playerSize); //Prints playerSize to console
     }
 
+    //This function takes the joystick direction and translates it into motion of the player object.
+    public void FixedUpdate()
+    {
+        Vector2 direction = Vector2.up * variableJoystick.Direction + Vector2.right * variableJoystick.Direction;
+        RIGIDBODY.AddForce(direction * speed * Time.fixedDeltaTime, ForceMode2D.Force);
+    }
 }
