@@ -10,16 +10,35 @@ public class SceneControls : MonoBehaviour
     //(???) Includes elements based on "PauseScript" from "Game Project - Find The Portal" by Victor Hejø
 
     public TextMeshProUGUI scoreText; //Text for the score.
+    public GameObject upgradeScreen; //The menu for upgrades.
     public GameObject gameOverScreen; //The screen that shows when the game is over.
     public int sceneNumber;
+    bool upgrading;
+    public GameObject upgradeMenuButton;
     
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         Time.timeScale = 1; //Makes sure time passes normally and is not stuck when the level is potentially restarted.
         gameOverScreen.SetActive(false); //Sets the game over screen to not be active, so the game can be played.
+        upgrading = false;//Makes sure the upgrade menu is off.
+        upgradeMenuButton.SetActive(true);
     }
 
+    private void FixedUpdate()
+    {
+        //Switches the upgrade menu on and off.
+        if (upgrading)
+        {
+            upgradeScreen.SetActive(true);
+        }
+        else if (!upgrading)
+        {
+            upgradeScreen.SetActive(false);
+        }
+    }
+
+    //Loads to a specific scene (Specified in the inspector).
     public void LoadScene()
     {
         SceneManager.LoadScene(sceneNumber);
@@ -43,5 +62,19 @@ public class SceneControls : MonoBehaviour
         Time.timeScale = 0;
         Debug.Log(Time.timeScale);
         gameOverScreen.SetActive(true);
+        upgradeMenuButton.SetActive(false);
+    }
+
+    //Switches the boolean between true and false in order to turn the menu on and off.
+    public void Upgrades()
+    {
+        if (upgrading)
+        {
+            upgrading = false;
+        }
+        else if (!upgrading)
+        {
+            upgrading = true;
+        }
     }
 }

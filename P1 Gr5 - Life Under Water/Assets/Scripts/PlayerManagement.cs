@@ -23,6 +23,8 @@ public class PlayerManagement : MonoBehaviour
     public int[] sizeLimits; //The collection of sizes that are required to make the sprite change.
     SceneControls sceneControls; //In order to access the methods in "SceneControls".
     [SerializeField] GameObject sceneController;
+    [SerializeField] GameObject upgradeMenu;
+    UpgradeManagement upgradeManagement;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +33,7 @@ public class PlayerManagement : MonoBehaviour
         sr.sprite = playerSprites[0]; //Set the player sprite as the first one.
         sceneControls = sceneController.GetComponent<SceneControls>();
         sceneControls.SetScoreText(score); //Sets up the score from the beginning
+        upgradeManagement = upgradeMenu.GetComponent<UpgradeManagement>();
     }
 
     // Update is called once per frame
@@ -118,5 +121,17 @@ public class PlayerManagement : MonoBehaviour
     {
         Vector2 direction = Vector2.up * variableJoystick.Direction + Vector2.right * variableJoystick.Direction;
         RIGIDBODY.AddForce(direction * speed * Time.fixedDeltaTime, ForceMode2D.Force);
+    }
+
+    public void BuyMoreSpeed()
+    {
+        speed = upgradeManagement.IncreaseSpeed(score,speed);
+        Debug.Log(speed);
+    }
+
+    public void BuyMoreGrowth()
+    {
+        sizeIncrement = upgradeManagement.IncreaseGrowth(score,sizeIncrement);
+        Debug.Log(sizeIncrement);
     }
 }
