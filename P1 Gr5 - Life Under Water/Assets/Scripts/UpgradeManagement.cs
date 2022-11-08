@@ -16,13 +16,21 @@ public class UpgradeManagement : MonoBehaviour
     [SerializeField] private int growthIncrease;
     private int speedUpgradeLevel;
     private int growthUpgradeLevel;
-    
+    [SerializeField] GameObject speedButton;
+    [SerializeField] GameObject growthButton;
+    [SerializeField] TextMeshProUGUI speedMaxedOutText;
+    [SerializeField] TextMeshProUGUI growthMaxedOutText;
+
     private void Start()
     {
         speedUpgradeLevel = 0;
         growthUpgradeLevel = 0;
         currentSpeedPrice = speedPrices[0];
         currentGrowthPrice = growthPrices[0];
+        speedButton.SetActive(true);
+        growthButton.SetActive(true);
+        speedMaxedOutText.gameObject.SetActive(false);
+        growthMaxedOutText.gameObject.SetActive(false);
     }
 
     private void FixedUpdate()
@@ -31,6 +39,17 @@ public class UpgradeManagement : MonoBehaviour
         currentGrowthPrice = growthPrices[growthUpgradeLevel];
         speedPriceText.text = currentSpeedPrice.ToString();
         growthPriceText.text = currentGrowthPrice.ToString();
+
+        if (currentSpeedPrice == 0)
+        {
+            speedButton.SetActive(false);
+            speedMaxedOutText.gameObject.SetActive(true);
+        }
+        if (currentGrowthPrice == 0)
+        {
+            growthButton.SetActive(false);
+            growthMaxedOutText.gameObject.SetActive(true);
+        }
     }
 
     public float IncreaseSpeed(int score, float playerSpeed)
