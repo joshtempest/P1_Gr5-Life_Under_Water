@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
 
 public class PlayerManagement : MonoBehaviour
@@ -22,24 +23,24 @@ public class PlayerManagement : MonoBehaviour
     public Sprite[] playerSprites; //The collection of sprites for the player.
     public int[] sizeLimits; //The collection of sizes that are required to make the sprite change.
     SceneControls sceneControls; //In order to access the methods in "SceneControls".
-    [SerializeField] GameObject sceneController;
-    [SerializeField] GameObject upgradeMenu;
-    UpgradeManagement upgradeManagement;
+    [SerializeField] GameObject sceneController; //The game object that has the script "SceneControls".
+    [SerializeField] GameObject upgradeMenu; //The game object that has the script "upgradeManagement".
+    UpgradeManagement upgradeManagement; //In order to access the methods in "UpgradeManagement".
 
     // Start is called before the first frame update
     void Start()
     {
         sr = GetComponent<SpriteRenderer>(); //The sprite renderer of the player.
         sr.sprite = playerSprites[0]; //Set the player sprite as the first one.
-        sceneControls = sceneController.GetComponent<SceneControls>();
+        sceneControls = sceneController.GetComponent<SceneControls>(); //Gets the script "SceneControls" from the scene controller.
         sceneControls.SetScoreText(score); //Sets up the score from the beginning
-        upgradeManagement = upgradeMenu.GetComponent<UpgradeManagement>();
+        upgradeManagement = upgradeMenu.GetComponent<UpgradeManagement>();//Gets the script "UpgradeManagement" from the upgrade menu.
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (score < sizeLimits[0])
+        if (score < sizeLimits[0]) //Changes the sprite if score is under the first limit
         {
             sr.sprite = playerSprites[0];
         }
@@ -73,9 +74,9 @@ public class PlayerManagement : MonoBehaviour
             int points = 1; //Local variable that determines how how the score should increase
 
             score = ComputeScore(score, points); //Calls the 'ComputeScore' function to calculate the score
-            sceneControls.SetScoreText(score);
+            sceneControls.SetScoreText(score); //Calls the 'SetScoreText' function from "SceneControls" to set the score text.
 
-            SizeController();
+            SizeController(); //Runs "SizeController" to control the size.
             Destroy(other.gameObject); //Destroy the collided object
         }
 
@@ -84,9 +85,9 @@ public class PlayerManagement : MonoBehaviour
             int points = 10; //Local variable that determines how how the score should increase
 
             score = ComputeScore(score, points); //Calls the 'ComputeScore' function to calculate the score
-            sceneControls.SetScoreText(score);
+            sceneControls.SetScoreText(score); //Calls the 'SetScoreText' function from "SceneControls" to set the score text.
 
-            SizeController();
+            SizeController(); //Runs "SizeController" to control the size.
             Destroy(other.gameObject); //Destroy the collided object
         }
 
@@ -95,9 +96,9 @@ public class PlayerManagement : MonoBehaviour
             int points = -1; //Local variable that determines how how the score should increase
 
             score = ComputeScore(score, points); //Calls the 'ComputeScore' function to calculate the score
-            sceneControls.SetScoreText(score);
+            sceneControls.SetScoreText(score); //Calls the 'SetScoreText' function from "SceneControls" to set the score text.
 
-            SizeController();
+            SizeController(); //Runs "SizeController" to control the size.
             Destroy(other.gameObject); //Destroy the collided object
         }
     }
@@ -127,25 +128,25 @@ public class PlayerManagement : MonoBehaviour
         RIGIDBODY.AddForce(direction * speed * Time.fixedDeltaTime, ForceMode2D.Force);
     }
 
+    //This is the function that buys increased speed when pushing the button in the upgrade menu.
     public void BuyMoreSpeed()
     {
-        float[] info = new float[2];
-        info = upgradeManagement.IncreaseSpeed(score,speed);
-        score = (int) info[0];
-        sceneControls.SetScoreText(score);
-        SizeController();
-        speed = info[1];
-        Debug.Log(speed);
+        float[] info = new float[2]; //An array to get both the new score and the new speed.
+        info = upgradeManagement.IncreaseSpeed(score,speed); //Calls "IncreaseSpeed" and contains the info in the array.
+        score = (int) info[0]; //Changes the score to the new value.
+        sceneControls.SetScoreText(score); //Sets the score text.
+        SizeController(); //Making sure the size of the player matches the new score.
+        speed = info[1]; //Changes the speed to the new value.
     }
 
+    //This is the function that buys increased growth when pushing the button in the upgrade menu.
     public void BuyMoreGrowth()
     {
-        float[] info = new float[2];
-        info = upgradeManagement.IncreaseGrowth(score,sizeIncrement);
-        score = (int) info[0];
-        sceneControls.SetScoreText(score);
-        SizeController();
-        sizeIncrement = info[1];
-        Debug.Log(sizeIncrement);
+        float[] info = new float[2]; //An array to get both the new score and the new size increment.
+        info = upgradeManagement.IncreaseGrowth(score,sizeIncrement); //Calls "IncreaseGrowth" and contains the info in the array.
+        score = (int)info[0]; //Changes the score to the new value.
+        sceneControls.SetScoreText(score); //Sets the score text.
+        SizeController(); //Making sure the size of the player matches the new score.
+        sizeIncrement = info[1]; //Changes the size increment to the new value.
     }
 }
