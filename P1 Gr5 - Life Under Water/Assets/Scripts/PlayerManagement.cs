@@ -39,7 +39,11 @@ public class PlayerManagement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (score >= sizeLimits[0] && score < sizeLimits[1]) //Changes the sprite if the score is between the first and second limit.
+        if (score < sizeLimits[0])
+        {
+            sr.sprite = playerSprites[0];
+        }
+        else if (score >= sizeLimits[0] && score < sizeLimits[1]) //Changes the sprite if the score is between the first and second limit.
         {
             sr.sprite = playerSprites[1];
         }
@@ -125,13 +129,23 @@ public class PlayerManagement : MonoBehaviour
 
     public void BuyMoreSpeed()
     {
-        speed = upgradeManagement.IncreaseSpeed(score,speed);
+        float[] info = new float[2];
+        info = upgradeManagement.IncreaseSpeed(score,speed);
+        score = (int) info[0];
+        sceneControls.SetScoreText(score);
+        SizeController();
+        speed = info[1];
         Debug.Log(speed);
     }
 
     public void BuyMoreGrowth()
     {
-        sizeIncrement = upgradeManagement.IncreaseGrowth(score,sizeIncrement);
+        float[] info = new float[2];
+        info = upgradeManagement.IncreaseGrowth(score,sizeIncrement);
+        score = (int) info[0];
+        sceneControls.SetScoreText(score);
+        SizeController();
+        sizeIncrement = info[1];
         Debug.Log(sizeIncrement);
     }
 }

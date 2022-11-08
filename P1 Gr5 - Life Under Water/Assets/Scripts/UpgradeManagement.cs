@@ -52,37 +52,47 @@ public class UpgradeManagement : MonoBehaviour
         }
     }
 
-    public float IncreaseSpeed(int score, float playerSpeed)
+    public float[] IncreaseSpeed(int score, float playerSpeed)
     {
         float increasedSpeed = 0;
+        float[] results = new float[2];
 
         if (score >= currentSpeedPrice)
         {
+            results[0] = score - currentSpeedPrice;
             increasedSpeed = playerSpeed + speedIncrease;
-            speedUpgradeLevel++;
+            speedUpgradeLevel++;            
+            results[1] = increasedSpeed;
         }
         else
         {
             increasedSpeed = playerSpeed;
+            results[0] = score;
+            results[1] = increasedSpeed;
         }
 
-        return increasedSpeed;
+        return results;
     }
 
-    public float IncreaseGrowth(int score, float playerIncrement)
+    public float[] IncreaseGrowth(int score, float playerIncrement)
     {
         float increasedGrowth = 0;
-        
+        float[] results = new float[2];
+
         if (score >= currentGrowthPrice)
         {
-            increasedGrowth = playerIncrement - growthIncrease;
+            results[0] = score - currentGrowthPrice;
+            increasedGrowth = playerIncrement + growthIncrease;
             growthUpgradeLevel++;
+            results[1] = increasedGrowth;
         }
         else
         {
             increasedGrowth = playerIncrement;
+            results[0] = score;
+            results[1] = increasedGrowth;
         }
 
-        return increasedGrowth;
+        return results;
     }
 }
