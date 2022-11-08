@@ -11,7 +11,7 @@ public class PlayerManagement : MonoBehaviour
     //(Maybe unnecessary) Includes elements based on "How to change a Sprite from a script in Unity (with examples)" by gamedevbeginner: https://gamedevbeginner.com/how-to-change-a-sprite-from-a-script-in-unity-with-examples/
     //Includes elements based on "HOW TO ACCESS DATA FROM ANOTHER SCRIPT 🎮 | Get Data From Other Scripts In Unity | Unity Tutorial" by Dani Krossing: https://www.youtube.com/watch?v=Y7pp2gzCzUI
 
-    int score = 1;  //This variable keeps track of the score
+    public int score = 1;  //This variable keeps track of the score
     public float sizeIncrement; //Determins amount of size increase (Lower number = Bigger increase)
     float playerSize; //Used to Determine the size of the player object.
     public float speed; //Determines the speed of the player object.
@@ -99,6 +99,16 @@ public class PlayerManagement : MonoBehaviour
             sceneControls.SetScoreText(score); //Calls the 'SetScoreText' function from "SceneControls" to set the score text.
 
             SizeController(); //Runs "SizeController" to control the size.
+            Destroy(other.gameObject); //Destroy the collided object
+        }
+        if (other.gameObject.tag == "Enemy") //If collided object have the tag "Object"
+        {
+            int points = -score; //Local variable that determines how how the score should increase
+
+            score = ComputeScore(score, points); //Calls the 'ComputeScore' function to calculate the score
+            sceneControls.SetScoreText(score);
+
+            SizeController();
             Destroy(other.gameObject); //Destroy the collided object
         }
     }
