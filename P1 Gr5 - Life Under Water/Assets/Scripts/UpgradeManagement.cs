@@ -35,12 +35,12 @@ public class UpgradeManagement : MonoBehaviour
         //Sets the maxed out text to be not active
         speedMaxedOutText.gameObject.SetActive(false);
         growthMaxedOutText.gameObject.SetActive(false);
-        //Sets the text to show the current price for the upgrades
+        //Sets the text to show the starting price for the upgrades
         speedPriceText.text = currentSpeedPrice.ToString();
         growthPriceText.text = currentGrowthPrice.ToString();
     }
 
-    private void FixedUpdate()
+    private void Update() //Using Update here so that the text on the buttons still gets updated when the game is paused.
     {
         //Sets the current price to match the amount of bought upgrades
         currentSpeedPrice = speedPrices[speedUpgradeLevel];

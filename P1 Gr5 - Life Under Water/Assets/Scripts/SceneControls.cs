@@ -87,7 +87,7 @@ public class SceneControls : MonoBehaviour
     //Pauses the game when called
     public void PauseGame()
     {
-        Time.timeScale = 0.001f; //Stops the game
+        Time.timeScale = 0f; //Stops the game
         isPaused = true;
         Debug.Log("Paused"); //Prints to console that the game is paused
     }
