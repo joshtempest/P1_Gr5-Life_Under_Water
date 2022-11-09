@@ -40,31 +40,9 @@ public class PlayerManagement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (score < sizeLimits[0]) //Changes the sprite if score is under the first limit
-        {
-            sr.sprite = playerSprites[0];
-        }
-        else if (score >= sizeLimits[0] && score < sizeLimits[1]) //Changes the sprite if the score is between the first and second limit.
-        {
-            sr.sprite = playerSprites[1];
-        }
-        else if (score >= sizeLimits[1] && score < sizeLimits[2]) //Changes the sprite if the score is between the second and third limit.
-        {
-            sr.sprite = playerSprites[2];
-        }
-        else if (score >= sizeLimits[2] && score < sizeLimits[3]) ///Changes the sprite if the score is between the third and fourth limit.
-        {
-            sr.sprite = playerSprites[3];
-        }
-        else if (score >= sizeLimits[3]) //Changes the sprite if the score passes the fourth limit.
-        {
-            sr.sprite = playerSprites[4];
-        }
-        if (score == 0) //If the score reaches 0, then the game is over and the method is called in order to end it.
-        {
-            sceneControls.GameOver();
-        }
     }
+
+
 
     //This function deals with everything happening when colliding with an object
     private void OnTriggerEnter2D(Collider2D other)
@@ -129,6 +107,7 @@ public class PlayerManagement : MonoBehaviour
         transform.localScale = sizeVector; //Uses the sizeVector to grow the player object. (Sets scale of object to sizeVector's values)
         Debug.Log("Score = " + score); //Prints score to console
         Debug.Log("Player Size = " + playerSize); //Prints playerSize to console
+        SpriteController(); //Runs SpriteController function which is responsible for changing out the player sprites
     }
 
     //This function takes the joystick direction and translates it into motion of the player object.
@@ -158,5 +137,33 @@ public class PlayerManagement : MonoBehaviour
         sceneControls.SetScoreText(score); //Sets the score text.
         SizeController(); //Making sure the size of the player matches the new score.
         sizeIncrement = info[1]; //Changes the size increment to the new value.
+    }
+
+    private void SpriteController()
+    {
+        if (score < sizeLimits[0]) //Changes the sprite if score is under the first limit
+        {
+            sr.sprite = playerSprites[0];
+        }
+        else if (score >= sizeLimits[0] && score < sizeLimits[1]) //Changes the sprite if the score is between the first and second limit.
+        {
+            sr.sprite = playerSprites[1];
+        }
+        else if (score >= sizeLimits[1] && score < sizeLimits[2]) //Changes the sprite if the score is between the second and third limit.
+        {
+            sr.sprite = playerSprites[2];
+        }
+        else if (score >= sizeLimits[2] && score < sizeLimits[3]) ///Changes the sprite if the score is between the third and fourth limit.
+        {
+            sr.sprite = playerSprites[3];
+        }
+        else if (score >= sizeLimits[3]) //Changes the sprite if the score passes the fourth limit.
+        {
+            sr.sprite = playerSprites[4];
+        }
+        if (score == 0) //If the score reaches 0, then the game is over and the method is called in order to end it.
+        {
+            sceneControls.GameOver();
+        }
     }
 }

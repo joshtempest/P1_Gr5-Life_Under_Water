@@ -21,11 +21,14 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 direction = player.position - transform.position; //Finds the distance between enemy and player
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg; //Gets the angle between the enemy and the player in radians which is then converted
-        rb.rotation = angle; //rotates to face the player
-        direction.Normalize();
-        movement = direction;
+        if(SceneControls.isPaused == false)
+        {
+            Vector3 direction = player.position - transform.position; //Finds the distance between enemy and player
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg; //Gets the angle between the enemy and the player in radians which is then converted
+            rb.rotation = angle; //rotates to face the player
+            direction.Normalize();
+            movement = direction;
+        }
         
     }
     private void FixedUpdate()
@@ -34,7 +37,6 @@ public class Enemy : MonoBehaviour
         GameObject Player = GameObject.Find("Player");
         PlayerManagement playerManagement = Player.GetComponent<PlayerManagement>();
         newScore = playerManagement.score;
-        Debug.Log(newScore);
     }
     void moveCharacter(Vector2 direction)
     {
