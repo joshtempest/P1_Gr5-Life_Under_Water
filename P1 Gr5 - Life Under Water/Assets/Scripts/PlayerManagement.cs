@@ -27,6 +27,7 @@ public class PlayerManagement : MonoBehaviour
     [SerializeField] GameObject upgradeMenu; //The game object that has the script "upgradeManagement".
     UpgradeManagement upgradeManagement; //In order to access the methods in "UpgradeManagement".
 
+    public GameObject player;
     // Start is called before the first frame update
     void Start()
     {

@@ -221,7 +221,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edaa4707e1060cc4392d2828db2d7a59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: 1
   sizeIncrement: 100
   speed: 100
   variableJoystick: {fileID: 0}
   RIGIDBODY: {fileID: 168036776397058736}
+  playerSprites:
+  - {fileID: -2413806693520163455, guid: 8c9cc9f417119744394ed1ae936f1995, type: 3}
+  - {fileID: -9095717837082945937, guid: 14f432d6f7462264c9cbb7b3aef94e80, type: 3}
+  - {fileID: -2135585597343286014, guid: 29531ab30641af84cb802183bacc024e, type: 3}
+  - {fileID: 7482667652216324306, guid: cea784045a2eb664891289c94fe2c431, type: 3}
+  - {fileID: 3625043607559282579, guid: 681317436b0d6904babbe78f7eee554a, type: 3}
+  sizeLimits: 020000000a000000140000002800000050000000
+  sceneController: {fileID: 0}
+  upgradeMenu: {fileID: 0}
+  player: {fileID: 7139727173066929605}
