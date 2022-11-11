@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SocialPlatforms.Impl;
 
-public class Enemy : MonoBehaviour
+public class EnemyBehavior : MonoBehaviour
 {
     public Transform player;
 
@@ -24,6 +24,7 @@ public class Enemy : MonoBehaviour
     {
         rb = this.GetComponent<Rigidbody2D>();
         enemyScore = Random.Range(1, 100);
+        Debug.LogFormat("Enemy score: {0}", enemyScore);
     }
 
     //
@@ -32,7 +33,7 @@ public class Enemy : MonoBehaviour
         Vector3 distance = player.position - transform.position; //Finds the distance between enemy and player
         float angle = Mathf.Atan2(distance.y, distance.x) * Mathf.Rad2Deg; //Gets the angle between the enemy and the player in radians which is then converted
         rb.rotation = angle; //rotates to face the player
-        float fdistance = Mathf.Sqrt((Mathf.Pow(distance.x, 2) + Mathf.Pow(distance.y, 2))); //Finds pythagoras to find the distance to the player as a float
+        float fdistance = Mathf.Sqrt(Mathf.Pow(distance.x, 2) + Mathf.Pow(distance.y, 2)); //Finds pythagoras to find the distance to the player as a float
         distance.Normalize(); //Normalizes the distance vector, since we only need the direction
         movement = distance;
 

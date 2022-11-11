@@ -26,6 +26,7 @@ public class PlayerManagement : MonoBehaviour
     [SerializeField] GameObject sceneController; //The game object that has the script "SceneControls".
     [SerializeField] GameObject upgradeMenu; //The game object that has the script "upgradeManagement".
     UpgradeManagement upgradeManagement; //In order to access the methods in "UpgradeManagement".
+    EnemyBehavior enemyBehavior;
 
     public GameObject player;
     // Start is called before the first frame update
@@ -82,13 +83,24 @@ public class PlayerManagement : MonoBehaviour
         }
         if (other.gameObject.tag == "Enemy") //If collided object have the tag "Object"
         {
-            int points = -score; //Local variable that determines how how the score should increase
+            int newEnemyScore = EnemyBehavior.enemyScore;
+            if (newEnemyScore >= score) 
+            {
+                int points = -score; //Local variable that determines how how the score should increase
+                score = ComputeScore(score, points); //Calls the 'ComputeScore' function to calculate the score
+                sceneControls.SetScoreText(score);
+                SizeController();
+                Destroy(other.gameObject); //Destroy the collided object
+            }
+            else
+            {
+                int point = newEnemyScore;
+                score = ComputeScore(score, point);
+                sceneControls.SetScoreText(score);
+                SizeController();
+                Destroy(other.gameObject);
+            } 
 
-            score = ComputeScore(score, points); //Calls the 'ComputeScore' function to calculate the score
-            sceneControls.SetScoreText(score);
-
-            SizeController();
-            Destroy(other.gameObject); //Destroy the collided object
         }
     }
 
