@@ -904,6 +904,7 @@ GameObject:
   m_Component:
   - component: {fileID: 505822243}
   - component: {fileID: 505822242}
+  - component: {fileID: 505822244}
   m_Layer: 0
   m_Name: SceneController
   m_TagString: Untagged
@@ -943,6 +944,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &505822244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505822241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 651e48db7342228458d0f418f8a0cb97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectToSpawn: {fileID: 5920113740412076083, guid: 2a69e4c9be6972a419b13517a7f92c9e, type: 3}
+  spawnSpeed: 1
+  spawnAmount: 2
 --- !u!1001 &536511905
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1622,29 +1638,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3726404025996278163, guid: bcfe7f4a24978dd48bc9d97e69a03f59, type: 3}
-      propertyPath: scoreText
-      value: 
-      objectReference: {fileID: 2044515078}
-    - target: {fileID: 3726404025996278163, guid: bcfe7f4a24978dd48bc9d97e69a03f59, type: 3}
       propertyPath: upgradeMenu
       value: 
       objectReference: {fileID: 1572759284}
     - target: {fileID: 3726404025996278163, guid: bcfe7f4a24978dd48bc9d97e69a03f59, type: 3}
-      propertyPath: upgradePanel
-      value: 
-      objectReference: {fileID: 1572759284}
-    - target: {fileID: 3726404025996278163, guid: bcfe7f4a24978dd48bc9d97e69a03f59, type: 3}
-      propertyPath: gameOverScreen
-      value: 
-      objectReference: {fileID: 2042967687}
-    - target: {fileID: 3726404025996278163, guid: bcfe7f4a24978dd48bc9d97e69a03f59, type: 3}
       propertyPath: sceneController
       value: 
       objectReference: {fileID: 505822241}
-    - target: {fileID: 3726404025996278163, guid: bcfe7f4a24978dd48bc9d97e69a03f59, type: 3}
-      propertyPath: scoreTextObject
-      value: 
-      objectReference: {fileID: 2044515076}
     - target: {fileID: 3726404025996278163, guid: bcfe7f4a24978dd48bc9d97e69a03f59, type: 3}
       propertyPath: variableJoystick
       value: 
@@ -3206,10 +3206,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 683372413}
-    - target: {fileID: 5920113740412076082, guid: 2a69e4c9be6972a419b13517a7f92c9e, type: 3}
-      propertyPath: lookRadius
-      value: 2.5
-      objectReference: {fileID: 0}
     - target: {fileID: 5920113740412076083, guid: 2a69e4c9be6972a419b13517a7f92c9e, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -3224,7 +3220,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5920113740412076084, guid: 2a69e4c9be6972a419b13517a7f92c9e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.97
+      value: -4.52
       objectReference: {fileID: 0}
     - target: {fileID: 5920113740412076084, guid: 2a69e4c9be6972a419b13517a7f92c9e, type: 3}
       propertyPath: m_LocalPosition.z

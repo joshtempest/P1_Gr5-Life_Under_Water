@@ -18,13 +18,15 @@ public class EnemyBehavior : MonoBehaviour
     NavMeshAgent agent;
     Transform target;
     public static int enemyScore;
+    public int disScore;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
         enemyScore = Random.Range(1, 100);
-        Debug.LogFormat("Enemy score: {0}", enemyScore);
+        disScore = enemyScore + 0;
+        //Debug.LogFormat("Enemy score: {0}", enemyScore);
     }
 
     //
@@ -38,14 +40,14 @@ public class EnemyBehavior : MonoBehaviour
         movement = distance;
 
         ///<Summary>
-        ///Finds the player so that the player score can be used
+        ///Finds the player so that the player score can be used to compare the enemy score with the player score
         /// </Summary>
         
         GameObject Player = GameObject.Find("Player");
         PlayerManagement playerManagement = Player.GetComponent<PlayerManagement>();
         newScore = playerManagement.score;
 
-        if ((enemyScore > newScore) && (fdistance <= lookRadius))
+        if ((enemyScore > newScore) && (fdistance <= lookRadius)) //Moves towards the player if enemy score is higher than player and within it's look radius
         {
             moveCharacter(movement);
         }
@@ -54,7 +56,7 @@ public class EnemyBehavior : MonoBehaviour
     {
         rb.MovePosition((Vector2)transform.position + (distance * moveSpeed * Time.deltaTime));
     }
-    private void OnDrawGizmosSelected()
+    private void OnDrawGizmosSelected() //Visualises the look radius to help with making and testing the game
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, lookRadius);
