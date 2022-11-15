@@ -16,9 +16,10 @@ public class SceneControls : MonoBehaviour
     public TextMeshProUGUI scoreText; //Text for the score.
     public GameObject upgradeScreen; //The menu for upgrades.
     public GameObject gameOverScreen; //The screen that shows when the game is over.
-    public int sceneNumber; //The build index for the specific scene that needs to be loaded
     public GameObject upgradeMenuButton; //The button that opens and closes the upgrade menu.
     bool isUpgrading; //A boolean that checks whether or not the upgrade menu is open
+    public GameObject pauseMenuButton; //Button for the pause button
+    public GameObject pauseMenu; //The pause menu
 
     public static bool isPaused; //Responsible for pausing/unpausing the game.
 
@@ -28,17 +29,14 @@ public class SceneControls : MonoBehaviour
         //Time.timeScale = 1; //Makes sure time passes normally and is not stuck when the level is potentially restarted.
         gameOverScreen.SetActive(false); //Sets the game over screen to not be active, so the game can be played.
         upgradeScreen.SetActive(false); //Deactivated the upgrade screen on start.
+        pauseMenu.SetActive(false);
         //isUpgrading = false; //Makes sure the upgrade menu is off.
         upgradeMenuButton.SetActive(true); //Set the upgrade button to be active
-    }
-
-    private void FixedUpdate()
-    {
-
+        pauseMenuButton.SetActive(true);
     }
 
     //Loads to a specific scene (Specified in the inspector).
-    public void LoadScene()
+    public void LoadScene(int sceneNumber)
     {
         SceneManager.LoadScene(sceneNumber);
     }
@@ -46,7 +44,7 @@ public class SceneControls : MonoBehaviour
     //Reloads the current level.
     public void RestartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); //Loads the currently active scene (Meant for the game scene)
+        LoadScene(SceneManager.GetActiveScene().buildIndex); //Loads the currently active scene (Meant for the game scene)
         ResumeGame(); //Resumes the game to make sure it isn't paused.
     }
 
@@ -61,6 +59,7 @@ public class SceneControls : MonoBehaviour
     {
         gameOverScreen.SetActive(true); //Turns the game over sceen active
         upgradeMenuButton.SetActive(false); //Shuts off the upgrade menu button.
+        pauseMenuButton.SetActive(false); //Shuts off the pause menu button.
         PauseGame(); //Calls PauseGame() function to pause the game.
     }
 
@@ -72,6 +71,7 @@ public class SceneControls : MonoBehaviour
         {
             isUpgrading = false;
             upgradeScreen.SetActive(false);
+            pauseMenuButton.SetActive(true);
             ResumeGame(); //Calls function to resumes the game
 
         }
@@ -79,10 +79,34 @@ public class SceneControls : MonoBehaviour
         {
             isUpgrading = true;
             upgradeScreen.SetActive(true);
+            pauseMenuButton.SetActive(false);
             PauseGame(); //Calls function to pauses the game
         }
     }
 
+    public void PauseMenu()
+    {
+        if (isPaused)
+        {
+            isPaused = false;
+            pauseMenu.SetActive(false);
+            pauseMenuButton.SetActive(true);
+            upgradeMenuButton.SetActive(true);
+            scoreText.gameObject.SetActive(true);
+            ResumeGame();
+            
+        }
+        else if (!isPaused)
+        {
+            isPaused = true;
+            pauseMenu.SetActive(true);
+            pauseMenuButton.SetActive(false);
+            upgradeMenuButton.SetActive(false);
+            scoreText.gameObject.SetActive(false);
+            PauseGame();
+
+        }
+    }
 
     //Pauses the game when called
     public void PauseGame()
