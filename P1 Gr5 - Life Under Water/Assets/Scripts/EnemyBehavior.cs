@@ -15,6 +15,7 @@ public class EnemyBehavior : MonoBehaviour
     private Vector2 movement;
     public float moveSpeed = 1f;
     public float lookRadius = 10f;
+    public float pickUpRadius = 15f;
     NavMeshAgent agent;
     Transform target;
     public static int enemyScore;
@@ -46,6 +47,7 @@ public class EnemyBehavior : MonoBehaviour
         GameObject Player = GameObject.Find("Player");
         PlayerManagement playerManagement = Player.GetComponent<PlayerManagement>();
         newScore = playerManagement.score;
+
 
         if ((enemyScore > newScore) && (fdistance <= lookRadius)) //Moves towards the player if enemy score is higher than player and within it's look radius
         {

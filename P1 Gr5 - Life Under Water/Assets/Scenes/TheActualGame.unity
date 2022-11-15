@@ -1254,6 +1254,9 @@ GameObject:
   - component: {fileID: 505822243}
   - component: {fileID: 505822242}
   - component: {fileID: 505822244}
+  - component: {fileID: 505822247}
+  - component: {fileID: 505822246}
+  - component: {fileID: 505822245}
   m_Layer: 0
   m_Name: SceneController
   m_TagString: Untagged
@@ -1306,9 +1309,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 651e48db7342228458d0f418f8a0cb97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObjectToSpawn: {fileID: 5920113740412076083, guid: 2a69e4c9be6972a419b13517a7f92c9e, type: 3}
+  ObjectToSpawn: {fileID: 1694937492}
   spawnSpeed: 1
-  spawnAmount: 2
+  spawnAmount: 3
+--- !u!114 &505822245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505822241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 651e48db7342228458d0f418f8a0cb97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectToSpawn: {fileID: 8885995450539990333, guid: 3214b17d93d54f947ae7c44d06c7e5ba, type: 3}
+  spawnSpeed: 10
+  spawnAmount: 10
+--- !u!114 &505822246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505822241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 651e48db7342228458d0f418f8a0cb97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectToSpawn: {fileID: 2696286698315088721, guid: 5d3d11f5fbc61ac4f8325e6001eda9d3, type: 3}
+  spawnSpeed: 2
+  spawnAmount: 10
+--- !u!114 &505822247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505822241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 651e48db7342228458d0f418f8a0cb97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectToSpawn: {fileID: 2239388839424039071, guid: baa5d4e647c9a3f45bf5d94799543b23, type: 3}
+  spawnSpeed: 5
+  spawnAmount: 20
 --- !u!1 &506871761
 GameObject:
   m_ObjectHideFlags: 0
@@ -4233,13 +4281,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 5920113740412076083, guid: 2a69e4c9be6972a419b13517a7f92c9e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5920113740412076084, guid: 2a69e4c9be6972a419b13517a7f92c9e, type: 3}
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5920113740412076084, guid: 2a69e4c9be6972a419b13517a7f92c9e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.43
+      value: 4564
       objectReference: {fileID: 0}
     - target: {fileID: 5920113740412076084, guid: 2a69e4c9be6972a419b13517a7f92c9e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4288,6 +4340,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2696286698315088722, guid: 5d3d11f5fbc61ac4f8325e6001eda9d3, type: 3}
   m_PrefabInstance: {fileID: 839937006}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1694937492 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5920113740412076083, guid: 2a69e4c9be6972a419b13517a7f92c9e, type: 3}
+  m_PrefabInstance: {fileID: 1661675029}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1770654165 stripped
 Transform:
