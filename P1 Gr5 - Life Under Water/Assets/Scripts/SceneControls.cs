@@ -39,6 +39,7 @@ public class SceneControls : MonoBehaviour
     public void LoadScene(int sceneNumber)
     {
         SceneManager.LoadScene(sceneNumber);
+        Time.timeScale = 1;
     }
 
     //Reloads the current level.

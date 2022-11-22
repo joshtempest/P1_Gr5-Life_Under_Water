@@ -25,6 +25,7 @@ public class PlayerManagement : MonoBehaviour
     SceneControls sceneControls; //In order to access the methods in "SceneControls".
     [SerializeField] GameObject sceneController; //The game object that has the script "SceneControls".
     UpgradeManagement upgradeManagement; //In order to access the methods in "UpgradeManagement".
+    [SerializeField] GameObject upgradeMenu;
     EnemyBehavior enemyBehavior;
 
     public GameObject player;
@@ -35,6 +36,7 @@ public class PlayerManagement : MonoBehaviour
         sr.sprite = playerSprites[0]; //Set the player sprite as the first one.
         sceneControls = sceneController.GetComponent<SceneControls>(); //Gets the script "SceneControls" from the scene controller.
         sceneControls.SetScoreText(score); //Sets up the score from the beginning
+        upgradeManagement = upgradeMenu.GetComponent<UpgradeManagement>();
     }
 
     // Update is called once per frame
