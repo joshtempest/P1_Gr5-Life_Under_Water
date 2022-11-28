@@ -77,6 +77,9 @@ public class MenuManager : MonoBehaviour
             isUpgrading = false;
             upgradeScreen.SetActive(false);
             pauseMenuButton.SetActive(true);
+            upgradeMenuButton.SetActive(true);
+            scoreText.gameObject.SetActive(true);
+            achievementButton.gameObject.SetActive(true);
             ResumeGame(); //Calls function to resumes the game
 
         }
@@ -85,6 +88,9 @@ public class MenuManager : MonoBehaviour
             isUpgrading = true;
             upgradeScreen.SetActive(true);
             pauseMenuButton.SetActive(false);
+            upgradeMenuButton.SetActive(false);
+            scoreText.gameObject.SetActive(false);
+            achievementButton.gameObject.SetActive(false);
             PauseGame(); //Calls function to pauses the game
         }
     }
