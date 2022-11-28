@@ -829,6 +829,18 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 856287461, guid: 9a1de60f0c2fadd43a374764bdeddc3f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1229.3752
+      objectReference: {fileID: 0}
+    - target: {fileID: 856287461, guid: 9a1de60f0c2fadd43a374764bdeddc3f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 856287462, guid: 9a1de60f0c2fadd43a374764bdeddc3f, type: 3}
+      propertyPath: m_text
+      value: Pauset
+      objectReference: {fileID: 0}
     - target: {fileID: 856287462, guid: 9a1de60f0c2fadd43a374764bdeddc3f, type: 3}
       propertyPath: m_fontSize
       value: 150
@@ -1712,6 +1724,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1220819399}
     m_Modifications:
+    - target: {fileID: 3028432671461006388, guid: 93a30dd39758d8b4681c033ce5cd040a, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3028432671461006388, guid: 93a30dd39758d8b4681c033ce5cd040a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4c50de2bc3183754bb6d7f9f43411c99, type: 3}
     - target: {fileID: 4200592131004776959, guid: 93a30dd39758d8b4681c033ce5cd040a, type: 3}
       propertyPath: m_fontSize
       value: 50
@@ -1724,6 +1744,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Upgrades Menu Button
       objectReference: {fileID: 0}
+    - target: {fileID: 4200592131378071062, guid: 93a30dd39758d8b4681c033ce5cd040a, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4200592131378071062, guid: 93a30dd39758d8b4681c033ce5cd040a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2f6d2fca293c2d5439fa6d196b4d6802, type: 3}
     - target: {fileID: 4200592131378071063, guid: 93a30dd39758d8b4681c033ce5cd040a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1844,6 +1872,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HUD Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4200592131669418395, guid: 93a30dd39758d8b4681c033ce5cd040a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4200592132615451946, guid: 93a30dd39758d8b4681c033ce5cd040a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1906,6 +1938,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4200592132615451949, guid: 93a30dd39758d8b4681c033ce5cd040a, type: 3}
       propertyPath: m_PreserveAspect
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4369702387179674103, guid: 93a30dd39758d8b4681c033ce5cd040a, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8351471554603789673, guid: 93a30dd39758d8b4681c033ce5cd040a, type: 3}
