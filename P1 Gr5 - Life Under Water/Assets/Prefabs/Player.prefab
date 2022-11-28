@@ -233,6 +233,6 @@ MonoBehaviour:
   - {fileID: 7482667652216324306, guid: cea784045a2eb664891289c94fe2c431, type: 3}
   - {fileID: 3625043607559282579, guid: 681317436b0d6904babbe78f7eee554a, type: 3}
   sizeLimits: 020000000a000000140000002800000050000000
-  sceneController: {fileID: 0}
+  menuController: {fileID: 0}
   upgradeMenu: {fileID: 0}
   player: {fileID: 7139727173066929605}

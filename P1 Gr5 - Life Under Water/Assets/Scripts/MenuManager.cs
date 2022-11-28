@@ -98,7 +98,7 @@ public class MenuManager : MonoBehaviour
             pauseMenuButton.SetActive(true);
             upgradeMenuButton.SetActive(true);
             scoreText.gameObject.SetActive(true);
-            achievementButton.gameObject.SetActive(false);
+            achievementButton.gameObject.SetActive(true);
             ResumeGame();
             
         }

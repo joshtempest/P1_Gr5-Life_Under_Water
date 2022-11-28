@@ -903,10 +903,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1523651039}
     - target: {fileID: 3726404025996278163, guid: bcfe7f4a24978dd48bc9d97e69a03f59, type: 3}
-      propertyPath: sceneController
-      value: 
-      objectReference: {fileID: 1523651039}
-    - target: {fileID: 3726404025996278163, guid: bcfe7f4a24978dd48bc9d97e69a03f59, type: 3}
       propertyPath: variableJoystick
       value: 
       objectReference: {fileID: 925851659}
