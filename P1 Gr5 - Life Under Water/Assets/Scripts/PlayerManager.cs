@@ -170,11 +170,16 @@ public class PlayerManager : MonoBehaviour
         {
             sr.sprite = playerSprites[3];
         }
-        else if (score >= sizeLimits[3]) //Changes the sprite if the score passes the fourth limit.
+        else if (score >= sizeLimits[3] && score < sizeLimits[4]) ///Changes the sprite if the score is between the fourth and fifth limit.
         {
             sr.sprite = playerSprites[4];
         }
-        if (score == 0) //If the score reaches 0, then the game is over and the method is called in order to end it.
+        else if (score >= sizeLimits[4]) //Changes the sprite if the score passes the fifth limit.
+        {
+            EndScene.totalScore = score;
+            menuManager.LoadScene(2);
+        }
+            if (score == 0) //If the score reaches 0, then the game is over and the method is called in order to end it.
         {
             menuManager.GameOver();
         }

@@ -932,6 +932,30 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1523651041}
+    - target: {fileID: 5780468671021284488, guid: 9a1de60f0c2fadd43a374764bdeddc3f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1082900379}
+    - target: {fileID: 5780468671021284488, guid: 9a1de60f0c2fadd43a374764bdeddc3f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BuyMoreGrowth
+      objectReference: {fileID: 0}
+    - target: {fileID: 5780468671021284488, guid: 9a1de60f0c2fadd43a374764bdeddc3f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5780468671121870853, guid: 9a1de60f0c2fadd43a374764bdeddc3f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1082900379}
+    - target: {fileID: 5780468671121870853, guid: 9a1de60f0c2fadd43a374764bdeddc3f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BuyMoreSpeed
+      objectReference: {fileID: 0}
+    - target: {fileID: 5780468671121870853, guid: 9a1de60f0c2fadd43a374764bdeddc3f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 5780468671142075211, guid: 9a1de60f0c2fadd43a374764bdeddc3f, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1078,6 +1102,10 @@ PrefabInstance:
       propertyPath: variableJoystick
       value: 
       objectReference: {fileID: 925851659}
+    - target: {fileID: 3726404025996278163, guid: bcfe7f4a24978dd48bc9d97e69a03f59, type: 3}
+      propertyPath: sizeLimits.Array.data[4]
+      value: 5000
+      objectReference: {fileID: 0}
     - target: {fileID: 3964741546090976153, guid: bcfe7f4a24978dd48bc9d97e69a03f59, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1128,6 +1156,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcfe7f4a24978dd48bc9d97e69a03f59, type: 3}
+--- !u!114 &1082900379 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3726404025996278163, guid: bcfe7f4a24978dd48bc9d97e69a03f59, type: 3}
+  m_PrefabInstance: {fileID: 1082900378}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edaa4707e1060cc4392d2828db2d7a59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1086818341 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2239388839424039068, guid: baa5d4e647c9a3f45bf5d94799543b23, type: 3}
