@@ -21,6 +21,8 @@ public class MenuManager : MonoBehaviour
     public GameObject pauseMenuButton; //Button for the pause button
     public GameObject pauseMenu; //The pause menu
 
+    public GameObject achievementButton; //AchievementMenu Button
+
     public static bool isPaused; //Responsible for pausing/unpausing the game.
 
     // Start is called before the first frame update
@@ -96,6 +98,7 @@ public class MenuManager : MonoBehaviour
             pauseMenuButton.SetActive(true);
             upgradeMenuButton.SetActive(true);
             scoreText.gameObject.SetActive(true);
+            achievementButton.gameObject.SetActive(false);
             ResumeGame();
             
         }
@@ -106,6 +109,7 @@ public class MenuManager : MonoBehaviour
             pauseMenuButton.SetActive(false);
             upgradeMenuButton.SetActive(false);
             scoreText.gameObject.SetActive(false);
+            achievementButton.gameObject.SetActive(false);
             PauseGame();
 
         }
