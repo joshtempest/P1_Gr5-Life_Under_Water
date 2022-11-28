@@ -99,10 +99,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5d2b462b7ea73445ab9ff0d616f9332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 3964741546090976153, guid: bcfe7f4a24978dd48bc9d97e69a03f59, type: 3}
+  player: {fileID: 0}
   newScore: 0
   moveSpeed: 1
   lookRadius: 4
+  pickUpRadius: 15
   disScore: 0
 --- !u!50 &6514869085726138903
 Rigidbody2D:
