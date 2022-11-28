@@ -8,7 +8,7 @@ using Unity.VisualScripting;
 using System;
 using Unity.VisualScripting.Antlr3.Runtime;
 
-public class SceneControls : MonoBehaviour
+public class MenuManager : MonoBehaviour
 {
     //Includes elements based on "Roll-a-Ball - Displaying Score and Text" by Unity: https://learn.unity.com/tutorial/displaying-score-and-text?uv=2019.4&projectId=5f158f1bedbc2a0020e51f0d
     //(???) Includes elements based on "PauseScript" from "Game Project - Find The Portal" by Victor Hejø
@@ -27,12 +27,12 @@ public class SceneControls : MonoBehaviour
     private void Start()
     {
         //Time.timeScale = 1; //Makes sure time passes normally and is not stuck when the level is potentially restarted.
-        gameOverScreen.SetActive(false); //Sets the game over screen to not be active, so the game can be played.
-        upgradeScreen.SetActive(false); //Deactivated the upgrade screen on start.
-        pauseMenu.SetActive(false);
+        //gameOverScreen.SetActive(false); //Sets the game over screen to not be active, so the game can be played.
+        //upgradeScreen.SetActive(false); //Deactivated the upgrade screen on start.
+        //pauseMenu.SetActive(false);
         //isUpgrading = false; //Makes sure the upgrade menu is off.
-        upgradeMenuButton.SetActive(true); //Set the upgrade button to be active
-        pauseMenuButton.SetActive(true);
+        //upgradeMenuButton.SetActive(true); //Set the upgrade button to be active
+        //pauseMenuButton.SetActive(true);
     }
 
     //Loads to a specific scene (Specified in the inspector).
@@ -46,13 +46,15 @@ public class SceneControls : MonoBehaviour
     public void RestartGame()
     {
         LoadScene(SceneManager.GetActiveScene().buildIndex); //Loads the currently active scene (Meant for the game scene)
+        gameOverScreen.SetActive(false);
+        pauseMenuButton.SetActive(false);
         ResumeGame(); //Resumes the game to make sure it isn't paused.
     }
 
     //Sets up the score text to show the score
     public void SetScoreText(int score)
     {
-        scoreText.text = "Score: " + score.ToString();
+        scoreText.text = "Vægt: " + score.ToString();
     }
 
     //Pauses the game through time.timescale and makes the "Game Over Panel" appear.
@@ -66,7 +68,7 @@ public class SceneControls : MonoBehaviour
 
 
     //Switches the upgrade menu on and off.
-    public void Upgrades()
+    public void UpgradesMenu()
     {
         if (isUpgrading) //If you are upgrading, then it will now be turned off
         {

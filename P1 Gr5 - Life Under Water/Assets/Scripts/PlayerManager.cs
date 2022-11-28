@@ -5,7 +5,7 @@ using System.IO;
 using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
 
-public class PlayerManagement : MonoBehaviour
+public class PlayerManager : MonoBehaviour
 {
     //Loosly based on "How to make an object follow the mouse in Unity" by Karolio: https://www.youtube.com/watch?v=mF_BB_YsyDk
     //(Maybe unnecessary) Includes elements based on "How to change a Sprite from a script in Unity (with examples)" by gamedevbeginner: https://gamedevbeginner.com/how-to-change-a-sprite-from-a-script-in-unity-with-examples/
@@ -22,8 +22,8 @@ public class PlayerManagement : MonoBehaviour
     SpriteRenderer sr; //The sprite renderer of the player.
     public Sprite[] playerSprites; //The collection of sprites for the player.
     public int[] sizeLimits; //The collection of sizes that are required to make the sprite change.
-    SceneControls sceneControls; //In order to access the methods in "SceneControls".
-    [SerializeField] GameObject sceneController; //The game object that has the script "SceneControls".
+    MenuManager menuManager; //In order to access the methods in "SceneControls".
+    [SerializeField] GameObject menuController; //The game object that has the script "SceneControls".
     UpgradeManagement upgradeManagement; //In order to access the methods in "UpgradeManagement".
     [SerializeField] GameObject upgradeMenu;
     EnemyBehavior enemyBehavior;
@@ -34,8 +34,8 @@ public class PlayerManagement : MonoBehaviour
     {
         sr = GetComponent<SpriteRenderer>(); //The sprite renderer of the player.
         sr.sprite = playerSprites[0]; //Set the player sprite as the first one.
-        sceneControls = sceneController.GetComponent<SceneControls>(); //Gets the script "SceneControls" from the scene controller.
-        sceneControls.SetScoreText(score); //Sets up the score from the beginning
+        menuManager = menuController.GetComponent<MenuManager>(); //Gets the script "SceneControls" from the scene controller.
+        menuManager.SetScoreText(score); //Sets up the score from the beginning
         upgradeManagement = upgradeMenu.GetComponent<UpgradeManagement>();
     }
 
@@ -54,7 +54,7 @@ public class PlayerManagement : MonoBehaviour
             int points = 1; //Local variable that determines how how the score should increase
 
             score = ComputeScore(score, points); //Calls the 'ComputeScore' function to calculate the score
-            sceneControls.SetScoreText(score); //Calls the 'SetScoreText' function from "SceneControls" to set the score text.
+            menuManager.SetScoreText(score); //Calls the 'SetScoreText' function from "SceneControls" to set the score text.
 
             SizeController(); //Runs "SizeController" to control the size.
             Destroy(other.gameObject); //Destroy the collided object
@@ -65,7 +65,7 @@ public class PlayerManagement : MonoBehaviour
             int points = 10; //Local variable that determines how how the score should increase
 
             score = ComputeScore(score, points); //Calls the 'ComputeScore' function to calculate the score
-            sceneControls.SetScoreText(score); //Calls the 'SetScoreText' function from "SceneControls" to set the score text.
+            menuManager.SetScoreText(score); //Calls the 'SetScoreText' function from "MenuManager" to set the score text.
 
             SizeController(); //Runs "SizeController" to control the size.
             Destroy(other.gameObject); //Destroy the collided object
@@ -76,7 +76,7 @@ public class PlayerManagement : MonoBehaviour
             int points = -1; //Local variable that determines how how the score should increase
 
             score = ComputeScore(score, points); //Calls the 'ComputeScore' function to calculate the score
-            sceneControls.SetScoreText(score); //Calls the 'SetScoreText' function from "SceneControls" to set the score text.
+            menuManager.SetScoreText(score); //Calls the 'SetScoreText' function from "MenuManager" to set the score text.
 
             SizeController(); //Runs "SizeController" to control the size.
             Destroy(other.gameObject); //Destroy the collided object
@@ -88,7 +88,7 @@ public class PlayerManagement : MonoBehaviour
             {
                 int points = -score; //Local variable that determines how how the score should increase
                 score = ComputeScore(score, points); //Calls the 'ComputeScore' function to calculate the score
-                sceneControls.SetScoreText(score);
+                menuManager.SetScoreText(score);
                 SizeController();
                 Destroy(other.gameObject); //Destroy the collided object
             }
@@ -96,7 +96,7 @@ public class PlayerManagement : MonoBehaviour
             {
                 int point = newEnemyScore;
                 score = ComputeScore(score, point);
-                sceneControls.SetScoreText(score);
+                menuManager.SetScoreText(score);
                 SizeController();
                 Destroy(other.gameObject);
             } 
@@ -136,7 +136,7 @@ public class PlayerManagement : MonoBehaviour
         float[] info = new float[2]; //An array to get both the new score and the new speed.
         info = upgradeManagement.IncreaseSpeed(score,speed); //Calls "IncreaseSpeed" and contains the info in the array.
         score = (int) info[0]; //Changes the score to the new value.
-        sceneControls.SetScoreText(score); //Sets the score text.
+        menuManager.SetScoreText(score); //Sets the score text.
         SizeController(); //Making sure the size of the player matches the new score.
         speed = info[1]; //Changes the speed to the new value.
     }
@@ -147,7 +147,7 @@ public class PlayerManagement : MonoBehaviour
         float[] info = new float[2]; //An array to get both the new score and the new size increment.
         info = upgradeManagement.IncreaseGrowth(score,sizeIncrement); //Calls "IncreaseGrowth" and contains the info in the array.
         score = (int)info[0]; //Changes the score to the new value.
-        sceneControls.SetScoreText(score); //Sets the score text.
+        menuManager.SetScoreText(score); //Sets the score text.
         SizeController(); //Making sure the size of the player matches the new score.
         sizeIncrement = info[1]; //Changes the size increment to the new value.
     }
@@ -176,7 +176,7 @@ public class PlayerManagement : MonoBehaviour
         }
         if (score == 0) //If the score reaches 0, then the game is over and the method is called in order to end it.
         {
-            sceneControls.GameOver();
+            menuManager.GameOver();
         }
     }
 }

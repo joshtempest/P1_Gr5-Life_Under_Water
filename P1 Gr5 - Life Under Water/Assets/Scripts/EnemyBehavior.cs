@@ -45,7 +45,7 @@ public class EnemyBehavior : MonoBehaviour
         /// </Summary>
         
         GameObject Player = GameObject.Find("Player");
-        PlayerManagement playerManagement = Player.GetComponent<PlayerManagement>();
+        PlayerManager playerManagement = Player.GetComponent<PlayerManager>();
         newScore = playerManagement.score;
 
 

@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5107993932871535309}
-  - component: {fileID: 5107993932871535308}
   - component: {fileID: 5107993932871535306}
   - component: {fileID: 5107993932871535305}
   - component: {fileID: 5107993932871535304}
@@ -28,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5107993932871535311}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -437.2378, y: -587.7372, z: 6.8810277}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -36,24 +35,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5107993932871535308
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5107993932871535311}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 659a75dea15fa8e439125ead848ae4d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreText: {fileID: 0}
-  upgradeScreen: {fileID: 0}
-  gameOverScreen: {fileID: 0}
-  upgradeMenuButton: {fileID: 0}
-  pauseMenuButton: {fileID: 0}
-  pauseMenu: {fileID: 0}
 --- !u!114 &5107993932871535306
 MonoBehaviour:
   m_ObjectHideFlags: 0
