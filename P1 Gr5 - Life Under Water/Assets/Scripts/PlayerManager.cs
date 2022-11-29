@@ -14,6 +14,7 @@ public class PlayerManager : MonoBehaviour
     public int score = 1;  //This variable keeps track of the score
     public float sizeIncrement; //Determins amount of size increase (Lower number = Bigger increase)
     float playerSize; //Used to Determine the size of the player object.
+    float cameraSize; //Used to Determine the size of the camera.
     public float speed; //Determines the speed of the player object.
     
     public VariableJoystick variableJoystick; //Calls the VariableJoystick script which is attached to the joystick itself.
@@ -28,6 +29,8 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] GameObject upgradeMenu;
     EnemyBehavior enemyBehavior;
 
+
+    
     public GameObject player;
     // Start is called before the first frame update
     void Start()
@@ -116,8 +119,12 @@ public class PlayerManager : MonoBehaviour
     void SizeController() 
     {
         playerSize = 1 + (score / sizeIncrement); // Determines the size of the player object. Devides score by sizeUp to control growth of the player object
+        cameraSize = score / sizeIncrement; // Determines the size of the camera.
         Vector3 sizeVector = new Vector3(playerSize, playerSize, 0); //Creates a new vecter called "sizeVector" which is based on the size variable.
         transform.localScale = sizeVector; //Uses the sizeVector to grow the player object. (Sets scale of object to sizeVector's values)
+
+        Camera.main.orthographicSize = 5 + cameraSize; //Used the cameraSize variable to set the orthographicSize of the camera so that it follows the size of the player object.
+
         Debug.Log("Score = " + score); //Prints score to console
         Debug.Log("Player Size = " + playerSize); //Prints playerSize to console
         SpriteController(); //Runs SpriteController function which is responsible for changing out the player sprites
