@@ -4,6 +4,7 @@ using System.Drawing;
 using System.IO;
 using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -30,7 +31,6 @@ public class PlayerManager : MonoBehaviour
     EnemyBehavior enemyBehavior;
 
 
-    
     public GameObject player;
     // Start is called before the first frame update
     void Start()
@@ -65,7 +65,7 @@ public class PlayerManager : MonoBehaviour
 
         if (other.gameObject.tag == "Object2") //If collided object have the tag "Object"
         {
-            int points = 10; //Local variable that determines how how the score should increase
+            int points = 4; //Local variable that determines how how the score should increase
 
             score = ComputeScore(score, points); //Calls the 'ComputeScore' function to calculate the score
             menuManager.SetScoreText(score); //Calls the 'SetScoreText' function from "MenuManager" to set the score text.
@@ -89,7 +89,7 @@ public class PlayerManager : MonoBehaviour
             int newEnemyScore = EnemyBehavior.enemyScore;
             if (newEnemyScore >= score) 
             {
-                int points = -score; //Local variable that determines how how the score should increase
+                int points = -newEnemyScore; //Local variable that determines how how the score should increase
                 score = ComputeScore(score, points); //Calls the 'ComputeScore' function to calculate the score
                 menuManager.SetScoreText(score);
                 SizeController();
@@ -127,7 +127,7 @@ public class PlayerManager : MonoBehaviour
     //This function is responsible for adjusting the size of the player object
     void SizeController() 
     {
-        playerSize = 1 + (score / sizeIncrement); // Determines the size of the player object. Devides score by sizeUp to control growth of the player object
+        playerSize = 3 + (score / sizeIncrement); // Determines the size of the player object. Devides score by sizeUp to control growth of the player object
         cameraSize = score / sizeIncrement; // Determines the size of the camera.
         Vector3 sizeVector = new Vector3(playerSize, playerSize, 0); //Creates a new vecter called "sizeVector" which is based on the size variable.
         transform.localScale = sizeVector; //Uses the sizeVector to grow the player object. (Sets scale of object to sizeVector's values)

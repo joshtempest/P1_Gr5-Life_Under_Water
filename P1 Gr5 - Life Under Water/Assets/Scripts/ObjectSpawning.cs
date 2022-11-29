@@ -41,7 +41,7 @@ public class ObjectSpawning : MonoBehaviour
 
             float fdistance = Mathf.Sqrt(Mathf.Pow(distanceFromPlayer.x, 2) + Mathf.Pow(distanceFromPlayer.y, 2)); //Finds pythagoras to find the distance to the player as a float
 
-            print(fdistance);
+            //print(fdistance);
 
             if (fdistance > minDistanceFromPlayer) //Spawns object if the distance to the player is great enough.
             {

@@ -8,18 +8,20 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class EnemyBehavior : MonoBehaviour
 {
-    public Transform player;
+    Transform player;
 
-    public int newScore;
+    int newScore;
     private Rigidbody2D rb;
     private Vector2 movement;
     public float moveSpeed = 1f;
     public float lookRadius = 10f;
-    public float pickUpRadius = 15f;
+    //public float pickUpRadius = 15f;
     NavMeshAgent agent;
     Transform target;
     public static int enemyScore;
     public int disScore;
+
+    [SerializeField] float sizeIncrement;
 
     // Start is called before the first frame update
     void Start()
@@ -28,11 +30,14 @@ public class EnemyBehavior : MonoBehaviour
         enemyScore = Random.Range(1, 100);
         disScore = enemyScore + 0;
         //Debug.LogFormat("Enemy score: {0}", enemyScore);
+
+        EnemySize();
     }
 
     //
     private void FixedUpdate() //Using FixedUpdate here so that the enemy stops moving when the game is paused.
     {
+        player = GameObject.Find("Player").transform;
         Vector3 distance = player.position - transform.position; //Finds the distance between enemy and player
         float angle = Mathf.Atan2(distance.y, distance.x) * Mathf.Rad2Deg; //Gets the angle between the enemy and the player in radians which is then converted
         rb.rotation = angle; //rotates to face the player
@@ -62,5 +67,14 @@ public class EnemyBehavior : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, lookRadius);
+    }
+
+    void EnemySize()
+    {
+        float enemySize = 1 + (enemyScore / sizeIncrement); // Determines the size of the player object. Devides score by sizeUp to control growth of the player object
+        Vector3 sizeVector = new Vector3(enemySize, enemySize, 0); //Creates a new vecter called "sizeVector" which is based on the size variable.
+        transform.localScale = sizeVector; //Uses the sizeVector to grow the player object. (Sets scale of object to sizeVector's values)
+        //SpriteController(); //Runs SpriteController function which is responsible for changing out the player sprites
+        Debug.Log("Enemy Size = " + enemySize); //Prints enemySize to console
     }
 }

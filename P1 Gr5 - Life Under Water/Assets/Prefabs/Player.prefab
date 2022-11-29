@@ -113,7 +113,7 @@ Transform:
   m_GameObject: {fileID: 7139727173066929605}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 823134008}
@@ -161,8 +161,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 33e0e6e1837de47d58feea3b012395a2, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -187,7 +187,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.25
 --- !u!50 &168036776397058736
 Rigidbody2D:
   serializedVersion: 4
@@ -208,7 +208,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!114 &3726404025996278163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,12 +227,12 @@ MonoBehaviour:
   variableJoystick: {fileID: 0}
   RIGIDBODY: {fileID: 168036776397058736}
   playerSprites:
-  - {fileID: -2413806693520163455, guid: 8c9cc9f417119744394ed1ae936f1995, type: 3}
-  - {fileID: -9095717837082945937, guid: 14f432d6f7462264c9cbb7b3aef94e80, type: 3}
-  - {fileID: -2135585597343286014, guid: 29531ab30641af84cb802183bacc024e, type: 3}
-  - {fileID: 7482667652216324306, guid: cea784045a2eb664891289c94fe2c431, type: 3}
-  - {fileID: 3625043607559282579, guid: 681317436b0d6904babbe78f7eee554a, type: 3}
-  sizeLimits: 020000000a000000140000002800000050000000
+  - {fileID: 21300000, guid: 33e0e6e1837de47d58feea3b012395a2, type: 3}
+  - {fileID: 21300000, guid: 0979c9f7e96f74f73bdeeb7111d89195, type: 3}
+  - {fileID: 21300000, guid: 6ab28e63172374e15870a522e0489bf6, type: 3}
+  - {fileID: 21300000, guid: ec95d3269cb1949ecbb87d3e26b41e42, type: 3}
+  - {fileID: 21300000, guid: e0076f1b5469449f88a642ff3a4a51a3, type: 3}
+  sizeLimits: 05000000140000002800000050000000f4010000
   menuController: {fileID: 0}
   upgradeMenu: {fileID: 0}
   player: {fileID: 7139727173066929605}
