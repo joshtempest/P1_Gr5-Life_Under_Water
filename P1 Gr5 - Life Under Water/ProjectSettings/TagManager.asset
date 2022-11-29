@@ -9,6 +9,7 @@ TagManager:
   - Object3
   - Enemy
   - Prey
+  - Wall
   layers:
   - Default
   - TransparentFX

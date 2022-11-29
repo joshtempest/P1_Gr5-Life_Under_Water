@@ -68,8 +68,8 @@ public class UpgradeManagement : MonoBehaviour
         float increasedSpeed = 0; //Declares the variable for the increased speed
         float[] results = new float[2]; //The results that we need for the player (index [0] being the new score and [1] being the new speed)
 
-        //If the score is larger than or equal to the current price
-        if (score >= currentSpeedPrice)
+        //If the score is larger than the current price
+        if (score > currentSpeedPrice)
         {
             results[0] = score - currentSpeedPrice; //The first result is the new score (the old score minus the price)
             increasedSpeed = playerSpeed + speedIncrease; //The new speed is defined as the old speed plus the increase.
@@ -93,8 +93,8 @@ public class UpgradeManagement : MonoBehaviour
         float increasedGrowth = 0; //Declares the variable for the new size increment
         float[] results = new float[2]; //The results that we need for the player (index [0] being the new score and [1] being the new size increment)
 
-        //If the score is larger than or equal to the current price
-        if (score >= currentGrowthPrice)
+        //If the score is larger than the current price
+        if (score > currentGrowthPrice)
         {
             results[0] = score - currentGrowthPrice; //The first result is the new score (the old score minus the price)
             increasedGrowth = playerIncrement + growthIncrease; //The new size increment is defined as the old minus the increase.
