@@ -103,7 +103,16 @@ public class PlayerManager : MonoBehaviour
                 SizeController();
                 Destroy(other.gameObject);
             } 
+        }
+        if (other.gameObject.tag == "Prey") //If collided object have the tag "Object"
+        {
+            int points = -5; //Local variable that determines how how the score should increase
 
+            score = ComputeScore(score, points); //Calls the 'ComputeScore' function to calculate the score
+            menuManager.SetScoreText(score); //Calls the 'SetScoreText' function from "MenuManager" to set the score text.
+
+            SizeController(); //Runs "SizeController" to control the size.
+            Destroy(other.gameObject); //Destroy the collided object
         }
     }
 
@@ -186,7 +195,7 @@ public class PlayerManager : MonoBehaviour
             EndScene.totalScore = score;
             menuManager.LoadScene(2);
         }
-            if (score == 0) //If the score reaches 0, then the game is over and the method is called in order to end it.
+            if (score <= 0) //If the score reaches or is below 0, then the game is over and the method is called in order to end it.
         {
             menuManager.GameOver();
         }
