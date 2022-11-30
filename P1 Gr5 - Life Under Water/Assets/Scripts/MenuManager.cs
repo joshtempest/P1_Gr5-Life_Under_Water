@@ -79,7 +79,7 @@ public class MenuManager : MonoBehaviour
             pauseMenuButton.SetActive(true);
             upgradeMenuButton.SetActive(true);
             scoreText.gameObject.SetActive(true);
-            achievementButton.gameObject.SetActive(true);
+            //achievementButton.gameObject.SetActive(true);
             ResumeGame(); //Calls function to resumes the game
 
         }
@@ -90,7 +90,7 @@ public class MenuManager : MonoBehaviour
             pauseMenuButton.SetActive(false);
             upgradeMenuButton.SetActive(false);
             scoreText.gameObject.SetActive(false);
-            achievementButton.gameObject.SetActive(false);
+            //achievementButton.gameObject.SetActive(false);
             PauseGame(); //Calls function to pauses the game
         }
     }
@@ -104,7 +104,7 @@ public class MenuManager : MonoBehaviour
             pauseMenuButton.SetActive(true);
             upgradeMenuButton.SetActive(true);
             scoreText.gameObject.SetActive(true);
-            achievementButton.gameObject.SetActive(true);
+            //achievementButton.gameObject.SetActive(true);
             ResumeGame();
             
         }
@@ -115,7 +115,7 @@ public class MenuManager : MonoBehaviour
             pauseMenuButton.SetActive(false);
             upgradeMenuButton.SetActive(false);
             scoreText.gameObject.SetActive(false);
-            achievementButton.gameObject.SetActive(false);
+            //achievementButton.gameObject.SetActive(false);
             PauseGame();
 
         }
