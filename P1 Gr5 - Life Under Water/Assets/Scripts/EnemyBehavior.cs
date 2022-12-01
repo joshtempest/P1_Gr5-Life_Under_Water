@@ -61,7 +61,7 @@ public class EnemyBehavior : MonoBehaviour
         newScore = playerManagement.score;
 
 
-        if ((enemyScore > newScore) && (fdistance <= huntRadius)) //Moves towards the player if enemy score is higher than the player and within the huntRadius
+        if ((enemyScore >= newScore) && (fdistance <= huntRadius)) //Moves towards the player if enemy score is higher than the player and within the huntRadius
         {
             sharedBehavior.MoveCharacter(movement, rb, moveSpeed); //Gets the moveCharacter functionality from the SharedBehavior script. 
             spriteRenderer.flipX = false; //Ensures that the sprite is not flipped when not supposed to.
