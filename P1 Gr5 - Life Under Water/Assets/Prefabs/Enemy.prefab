@@ -100,9 +100,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
-  lookRadius: 10
+  huntRadius: 15
+  fleeRadius: 10
   disScore: 0
   sizeIncrement: 100
+  sharedBehavior: {fileID: 0}
 --- !u!50 &6514869085726138903
 Rigidbody2D:
   serializedVersion: 4
@@ -134,7 +136,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
