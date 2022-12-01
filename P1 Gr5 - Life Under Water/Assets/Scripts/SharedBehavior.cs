@@ -22,13 +22,13 @@ public class SharedBehavior : MonoBehaviour
         if (rb.transform.eulerAngles.z >= 90 && rb.transform.eulerAngles.z <= 270) //Flips the sprite if upside down.
         {
             spriteRenderer.flipY = true;
-            print("Flipped!");
+            //print("Flipped!");
         }
 
         else
         {
             spriteRenderer.flipY = false; //Unflips if the "if" statement does not match.
-            print("Unflipped!");
+            //print("Unflipped!");
         }
     }
     //This method is responsible for moving the object.
