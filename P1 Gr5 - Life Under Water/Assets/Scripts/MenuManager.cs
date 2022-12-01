@@ -23,6 +23,9 @@ public class MenuManager : MonoBehaviour
 
     public GameObject achievementButton; //AchievementMenu Button
 
+    public GameObject infoMenu;
+    bool isInforming;
+
     public static bool isPaused; //Responsible for pausing/unpausing the game.
 
     // Start is called before the first frame update
@@ -118,6 +121,23 @@ public class MenuManager : MonoBehaviour
             //achievementButton.gameObject.SetActive(false);
             PauseGame();
 
+        }
+    }
+
+    public void InfoMenu()
+    {
+        if (isInforming)
+        {
+            isInforming = false;
+            infoMenu.SetActive(false);
+            ResumeGame(); //Calls function to resumes the game
+
+        }
+        else if (!isUpgrading) //If you are not upgrading, then it will now be turned on.
+        {
+            isInforming = true;
+            infoMenu.SetActive(true);
+            PauseGame(); //Calls function to pauses the game
         }
     }
 

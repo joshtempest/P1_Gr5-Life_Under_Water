@@ -29,6 +29,9 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] GameObject upgradeMenu;
     EnemyBehavior enemyBehavior;
 
+    [SerializeField] GameObject infoController;
+    InfoManagement im;
+
 
     public GameObject player;
     // Start is called before the first frame update
@@ -39,14 +42,8 @@ public class PlayerManager : MonoBehaviour
         menuManager = menuController.GetComponent<MenuManager>(); //Gets the script "SceneControls" from the scene controller.
         menuManager.SetScoreText(score); //Sets up the score from the beginning
         upgradeManagement = upgradeMenu.GetComponent<UpgradeManagement>();
+        im = infoController.GetComponent<InfoManagement>();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
-
 
     //This function deals with everything happening when colliding with an object
     private void OnTriggerEnter2D(Collider2D other)
@@ -179,19 +176,19 @@ public class PlayerManager : MonoBehaviour
         }
         else if (score >= sizeLimits[0] && score < sizeLimits[1]) //Changes the sprite if the score is between the first and second limit.
         {
-            sr.sprite = playerSprites[1];
+            sr.sprite = playerSprites[1];                      
         }
         else if (score >= sizeLimits[1] && score < sizeLimits[2]) //Changes the sprite if the score is between the second and third limit.
         {
-            sr.sprite = playerSprites[2];
+            sr.sprite = playerSprites[2];            
         }
         else if (score >= sizeLimits[2] && score < sizeLimits[3]) ///Changes the sprite if the score is between the third and fourth limit.
         {
-            sr.sprite = playerSprites[3];
+            sr.sprite = playerSprites[3];            
         }
         else if (score >= sizeLimits[3] && score < sizeLimits[4]) ///Changes the sprite if the score is between the fourth and fifth limit.
         {
-            sr.sprite = playerSprites[4];
+            sr.sprite = playerSprites[4];            
         }
         else if (score >= sizeLimits[4]) //Changes the sprite if the score passes the fifth limit.
         {
