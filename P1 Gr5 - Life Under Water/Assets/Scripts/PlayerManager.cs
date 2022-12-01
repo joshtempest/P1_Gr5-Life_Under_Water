@@ -51,10 +51,10 @@ public class PlayerManager : MonoBehaviour
     //This function deals with everything happening when colliding with an object
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Wall")
-        {
-            transform.position = transform.position * -1;
-        }
+        //if (other.gameObject.tag == "Wall")
+        //{
+        //    transform.position = transform.position * -1;
+        //}
         if (other.gameObject.tag == "Object") //If collided object have the tag "Object"
         {
             int points = 1; //Local variable that determines how how the score should increase

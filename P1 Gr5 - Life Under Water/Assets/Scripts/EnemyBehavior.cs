@@ -14,14 +14,19 @@ public class EnemyBehavior : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 movement;
     public float moveSpeed = 1f;
-    public float lookRadius = 10f;
+    public float huntRadius = 15f;
+    public float fleeRadius = 10f;
     //public float pickUpRadius = 15f;
     NavMeshAgent agent;
     Transform target;
     public static int enemyScore;
     public int disScore;
-
+    private SpriteRenderer spriteRenderer;
     [SerializeField] float sizeIncrement;
+
+    // Gets all scripts needed.
+    public SharedBehavior sharedBehavior;
+
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +35,8 @@ public class EnemyBehavior : MonoBehaviour
         enemyScore = Random.Range(1, 100);
         disScore = enemyScore + 0;
         //Debug.LogFormat("Enemy score: {0}", enemyScore);
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
 
         EnemySize();
     }
@@ -54,19 +61,25 @@ public class EnemyBehavior : MonoBehaviour
         newScore = playerManagement.score;
 
 
-        if ((enemyScore > newScore) && (fdistance <= lookRadius)) //Moves towards the player if enemy score is higher than player and within it's look radius
+        if ((enemyScore > newScore) && (fdistance <= huntRadius)) //Moves towards the player if enemy score is higher than the player and within the huntRadius
         {
-            moveCharacter(movement);
+            sharedBehavior.MoveCharacter(movement, rb, moveSpeed); //Gets the moveCharacter functionality from the SharedBehavior script. 
+            spriteRenderer.flipX = false; //Ensures that the sprite is not flipped when not supposed to.
+            sharedBehavior.SpriteFlipper(rb, spriteRenderer); //Gets the SpriteFlipper functionality from the SharedBehavior script.
         }
-    }
-    void moveCharacter(Vector2 distance)
-    {
-        rb.MovePosition((Vector2)transform.position + (distance * moveSpeed * Time.deltaTime));
+
+        if ((enemyScore < newScore) && (fdistance <= fleeRadius)) //Moves away from the player if enemy score is lower than the player and within the fleeRadius
+        {
+            sharedBehavior.MoveCharacter(-movement, rb, moveSpeed); //Gets the moveCharacter functionality from the SharedBehavior script. Note that "movement" is negative here, this is to make the enemy move away from the player instead of towards.
+            spriteRenderer.flipX = true; //Flips the sprite on the "X" axis so that it faces the correct way.
+            sharedBehavior.SpriteFlipper(rb, spriteRenderer); //Gets the SpriteFlipper functionality from the SharedBehavior script.
+        }
+
     }
     private void OnDrawGizmosSelected() //Visualises the look radius to help with making and testing the game
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, lookRadius);
+        Gizmos.DrawWireSphere(transform.position, huntRadius);
     }
 
     void EnemySize()
@@ -77,4 +90,13 @@ public class EnemyBehavior : MonoBehaviour
         //SpriteController(); //Runs SpriteController function which is responsible for changing out the player sprites
         Debug.Log("Enemy Size = " + enemySize); //Prints enemySize to console
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Wall") //Detect if collided with wall.
+        {
+            Destroy(gameObject); //Destroy the attached object
+        }
+    }
+
 }

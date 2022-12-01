@@ -8,23 +8,24 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class PreyBehavior : MonoBehaviour
 {
-    Transform player;
-
-    private Rigidbody2D rb;
+    Transform player; //Gets the Transform of the attached object and assigns it the name "player".
+    private Rigidbody2D rb; //Gets the Rigidbody2D of the attached object and assigns it the name "rb".
+    private SpriteRenderer spriteRenderer; //Gets the SpriteRenderer of the attached object and assigns it the name "spriteRenderer".
     private Vector2 movement;
-    public float moveSpeed = 1f;
-    public float lookRadius = 10f;
-    //public float pickUpRadius = 15f;
-    NavMeshAgent agent;
-    Transform target;
+    public float moveSpeed = 1f; //Responsible for setting the movement speed.
+    public float lookRadius = 10f; //Responsible for setting the radius of how far the object is able to see.
+
+    // Gets all scripts needed.
+    public SharedBehavior sharedBehavior;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    //
+    // Update is called once per frame
     private void FixedUpdate() //Using FixedUpdate here so that the prey stops moving when the game is paused.
     {
         player = GameObject.Find("Player").transform;
@@ -45,16 +46,25 @@ public class PreyBehavior : MonoBehaviour
 
         if (fdistance <= lookRadius) //Moves away from the player if within its look radius
         {
-            moveCharacter(movement);
+            sharedBehavior.MoveCharacter(movement, rb, moveSpeed); //Gets the moveCharacter functionality from the SharedBehavior script. 
+            spriteRenderer.flipX = true; //Flips the sprite on the "X" axis.
+            sharedBehavior.SpriteFlipper(rb, spriteRenderer); //Gets the SpriteFlipper functionality from the SharedBehavior script. 
         }
     }
-    void moveCharacter(Vector2 distance)
-    {
-        rb.MovePosition((Vector2)transform.position + (distance * moveSpeed * Time.deltaTime));
-    }
+
+    //This method is responsible for moving the object.
     private void OnDrawGizmosSelected() //Visualises the look radius to help with making and testing the game
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, lookRadius);
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Wall") //Detect if collided with wall.
+        {
+            Destroy(gameObject); //Destroy the attached object
+        }
+    }
+
 }

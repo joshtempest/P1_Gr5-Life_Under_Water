@@ -10,7 +10,7 @@ EditorBuildSettings:
     guid: 4cb04701e7257f044936f788483d7b4a
   - enabled: 1
     path: Assets/Scenes/TheActualGame.unity
-    guid: 9398b4db91bf7254796ea8678227aedf
+    guid: b31db81b2c32c164f936b29cffb2b468
   - enabled: 1
     path: Assets/Scenes/EndScene.unity
     guid: e0287a5abf818374c9a66f959c0cbddf
