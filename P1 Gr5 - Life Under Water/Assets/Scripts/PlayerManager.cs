@@ -109,7 +109,7 @@ public class PlayerManager : MonoBehaviour
         }
         if (other.gameObject.tag == "Prey") //If collided object have the tag "Object"
         {
-            int points = -5; //Local variable that determines how how the score should increase
+            int points = 10; //Local variable that determines how how the score should increase
 
             score = ComputeScore(score, points); //Calls the 'ComputeScore' function to calculate the score
             menuManager.SetScoreText(score); //Calls the 'SetScoreText' function from "MenuManager" to set the score text.

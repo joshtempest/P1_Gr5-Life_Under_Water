@@ -11,11 +11,15 @@ public class ObjectSpawning : MonoBehaviour
     public int spawnAmount;
     public float minDistanceFromPlayer;
 
+    GameObject SpawnerBox;
+
     // Start is called before the first frame update
     void Start()
     {
+
         InvokeRepeating("Generate", 0, spawnSpeed);
         //InvokeRepeating("SpawnObject", 0, spawnSpeed);
+
     }
 
     // Update is called once per frame
@@ -29,11 +33,18 @@ public class ObjectSpawning : MonoBehaviour
 
         if (GameObject.FindGameObjectsWithTag(ObjectToSpawn.tag).Length < spawnAmount)
         {
-            int x = Random.Range(-1 * Camera.main.pixelWidth, Camera.main.pixelWidth * 2);
-            int y = Random.Range(-1 * Camera.main.pixelHeight, Camera.main.pixelHeight * 2);
+            SpawnerBox = GameObject.Find("SpawnerBox"); //Finds the SpawnerBox object and attaches it to the SpawnerBox GameObject variable.
 
-            Vector3 spawnPosition = Camera.main.ScreenToWorldPoint(new Vector3(x, y, 0));
+            float spawnerWidth = SpawnerBox.GetComponent<SpriteRenderer>().bounds.size.x;
+            float spawnerHeight = SpawnerBox.GetComponent<SpriteRenderer>().bounds.size.y;
+
+            float x = Random.Range(-spawnerWidth, spawnerWidth);
+            float y = Random.Range(-spawnerHeight, spawnerHeight);
+
+            Vector3 spawnPosition = new Vector3(x, y, 0);
+
             spawnPosition.z = 0;
+
 
             Vector3 playerPosition = GameObject.Find("Player").transform.position; //Gets the position of the player object.
 
