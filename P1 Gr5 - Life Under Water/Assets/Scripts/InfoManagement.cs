@@ -9,7 +9,7 @@ public class InfoManagement : MonoBehaviour
     PlayerManager pm;
     public GameObject menuController;
     MenuManager mm;
-    int infoIndex;
+    static int infoIndex = 0;
     public TextMeshProUGUI currentInfoText;
     public TextMeshProUGUI[] infoTexts;
 
@@ -17,7 +17,6 @@ public class InfoManagement : MonoBehaviour
     {
         pm = player.GetComponent<PlayerManager>();
         mm = menuController.GetComponent<MenuManager>();
-        infoIndex = 0;
     }
 
     public void Update()
