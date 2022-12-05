@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8fa71d445105c2a4baa11a056e038319
+guid: bbb8c0f39df69f345907363e95071c86
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 35
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -105,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ColaBottle_0
+      name: ColaBottle edited_0
       rect:
         serializedVersion: 2
         x: 0
@@ -119,14 +119,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac5bb086214774d41a8f0f718b4f3f1b
-      internalID: 1517662405
+      spriteID: 6f72cb649918211499194a986dff5dda
+      internalID: 122827500
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ColaBottle_1
+      name: ColaBottle edited_1
       rect:
         serializedVersion: 2
         x: 64
@@ -140,14 +140,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 81a225916d535274681dca5fa39ac2e9
-      internalID: -961320854
+      spriteID: e6d9004d35944bb459a1d08ab8ac4a84
+      internalID: -700948849
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ColaBottle_2
+      name: ColaBottle edited_2
       rect:
         serializedVersion: 2
         x: 0
@@ -161,8 +161,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e6c65866c3d9f844cb847177e63efb26
-      internalID: -1883715608
+      spriteID: 37f29b30559961b41aa59efed64ec679
+      internalID: 1119176338
       vertices: []
       indices: 
       edges: []
@@ -178,9 +178,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ColaBottle_0: 1517662405
-      ColaBottle_2: -1883715608
-      ColaBottle_1: -961320854
+      ColaBottle edited_2: 1119176338
+      ColaBottle edited_1: -700948849
+      ColaBottle edited_0: 122827500
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
