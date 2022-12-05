@@ -31,7 +31,6 @@ public class PreyBehavior : MonoBehaviour
         player = GameObject.Find("Player").transform;
         Vector3 distance = player.position - transform.position; //Finds the distance between prey and player
         float angle = Mathf.Atan2(distance.y, distance.x) * Mathf.Rad2Deg; //Gets the angle between the prey and the player in radians which is then converted
-        rb.rotation = angle; //rotates to face the player
         //transform.rotation = Quaternion.Inverse(target.rotation); //Inverts the rotation so that the prey faces away from the player.
         float fdistance = Mathf.Sqrt(Mathf.Pow(distance.x, 2) + Mathf.Pow(distance.y, 2)); //Finds pythagoras to find the distance to the player as a float
         distance.Normalize(); //Normalizes the distance vector, since we only need the direction
@@ -46,6 +45,7 @@ public class PreyBehavior : MonoBehaviour
 
         if (fdistance <= lookRadius) //Moves away from the player if within its look radius
         {
+            rb.rotation = angle; //rotates to face the player
             sharedBehavior.MoveCharacter(movement, rb, moveSpeed); //Gets the moveCharacter functionality from the SharedBehavior script. 
             spriteRenderer.flipX = true; //Flips the sprite on the "X" axis.
             sharedBehavior.SpriteFlipper(rb, spriteRenderer); //Gets the SpriteFlipper functionality from the SharedBehavior script. 
