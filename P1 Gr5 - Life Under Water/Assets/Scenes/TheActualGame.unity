@@ -793,7 +793,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3726404025996278163, guid: bcfe7f4a24978dd48bc9d97e69a03f59, type: 3}
       propertyPath: score
-      value: 100
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3726404025996278163, guid: bcfe7f4a24978dd48bc9d97e69a03f59, type: 3}
       propertyPath: upgradeMenu
@@ -1069,20 +1069,36 @@ PrefabInstance:
     m_TransformParent: {fileID: 348411711}
     m_Modifications:
     - target: {fileID: 448007082, guid: 144a86a5d396a4449ad29cc652fca72f, type: 3}
+      propertyPath: m_Size.x
+      value: 1.158778
+      objectReference: {fileID: 0}
+    - target: {fileID: 448007082, guid: 144a86a5d396a4449ad29cc652fca72f, type: 3}
       propertyPath: m_Size.y
-      value: 0.7702628
+      value: 0.7428554
       objectReference: {fileID: 0}
     - target: {fileID: 448007082, guid: 144a86a5d396a4449ad29cc652fca72f, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 448007082, guid: 144a86a5d396a4449ad29cc652fca72f, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.17814852
+      objectReference: {fileID: 0}
+    - target: {fileID: 448007082, guid: 144a86a5d396a4449ad29cc652fca72f, type: 3}
       propertyPath: m_Offset.y
-      value: 0.4586186
+      value: 0.0703488
       objectReference: {fileID: 0}
     - target: {fileID: 448007082, guid: 144a86a5d396a4449ad29cc652fca72f, type: 3}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 448007082, guid: 144a86a5d396a4449ad29cc652fca72f, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 2.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 448007082, guid: 144a86a5d396a4449ad29cc652fca72f, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.28
       objectReference: {fileID: 0}
     - target: {fileID: 448007083, guid: 144a86a5d396a4449ad29cc652fca72f, type: 3}
       propertyPath: disScore
@@ -1094,7 +1110,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 448007083, guid: 144a86a5d396a4449ad29cc652fca72f, type: 3}
       propertyPath: sizeIncrement
-      value: 100
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 448007083, guid: 144a86a5d396a4449ad29cc652fca72f, type: 3}
       propertyPath: sharedBehavior
@@ -1102,11 +1118,11 @@ PrefabInstance:
       objectReference: {fileID: 647596491}
     - target: {fileID: 448007083, guid: 144a86a5d396a4449ad29cc652fca72f, type: 3}
       propertyPath: enemyScoreRangeEnd
-      value: 300
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 448007083, guid: 144a86a5d396a4449ad29cc652fca72f, type: 3}
       propertyPath: enemyScoreRangeStart
-      value: 200
+      value: 5000
       objectReference: {fileID: 0}
     - target: {fileID: 448007084, guid: 144a86a5d396a4449ad29cc652fca72f, type: 3}
       propertyPath: m_Size.x
@@ -1118,7 +1134,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 448007084, guid: 144a86a5d396a4449ad29cc652fca72f, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 448007084, guid: 144a86a5d396a4449ad29cc652fca72f, type: 3}
       propertyPath: m_Offset.x
@@ -1128,9 +1144,25 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -0.42241168
       objectReference: {fileID: 0}
+    - target: {fileID: 448007084, guid: 144a86a5d396a4449ad29cc652fca72f, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 2.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 448007084, guid: 144a86a5d396a4449ad29cc652fca72f, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.28
+      objectReference: {fileID: 0}
     - target: {fileID: 680536038347062916, guid: 144a86a5d396a4449ad29cc652fca72f, type: 3}
       propertyPath: m_RootOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 680536038347062916, guid: 144a86a5d396a4449ad29cc652fca72f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 680536038347062916, guid: 144a86a5d396a4449ad29cc652fca72f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 680536038347062916, guid: 144a86a5d396a4449ad29cc652fca72f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1172,11 +1204,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 680536038347062918, guid: 144a86a5d396a4449ad29cc652fca72f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 680536038347062919, guid: 144a86a5d396a4449ad29cc652fca72f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a8f8075be27844bb69b8aa14375e2a17, type: 3}
     - target: {fileID: 680536038347062969, guid: 144a86a5d396a4449ad29cc652fca72f, type: 3}
       propertyPath: m_Name
       value: Enemy (A yellow Submarine_0)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 448007084, guid: 144a86a5d396a4449ad29cc652fca72f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 144a86a5d396a4449ad29cc652fca72f, type: 3}
 --- !u!1 &1523651039 stripped
 GameObject:
