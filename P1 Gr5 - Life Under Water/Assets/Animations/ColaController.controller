@@ -32,8 +32,8 @@ AnimatorStateMachine:
   m_Name: Base Layer
   m_ChildStates:
   - serializedVersion: 1
-    m_State: {fileID: 5730211674217170320}
-    m_Position: {x: 200, y: 0, z: 0}
+    m_State: {fileID: 8298787552348873410}
+    m_Position: {x: 235, y: 65, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -43,15 +43,15 @@ AnimatorStateMachine:
   m_EntryPosition: {x: 50, y: 120, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: 5730211674217170320}
---- !u!1102 &5730211674217170320
+  m_DefaultState: {fileID: 8298787552348873410}
+--- !u!1102 &8298787552348873410
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ColaIdle
+  m_Name: ColaIDle
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
