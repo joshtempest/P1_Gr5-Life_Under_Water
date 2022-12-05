@@ -114,6 +114,26 @@ public class PlayerManager : MonoBehaviour
             SizeController(); //Runs "SizeController" to control the size.
             Destroy(other.gameObject); //Destroy the collided object
         }
+        if (other.gameObject.tag == "Enemy_Boat") //If collided object have the tag "Object"
+        {
+            int newEnemyScore = EnemyBehavior.enemyScore;
+            if (newEnemyScore >= score)
+            {
+                int points = -newEnemyScore; //Local variable that determines how how the score should increase
+                score = ComputeScore(score, points); //Calls the 'ComputeScore' function to calculate the score
+                menuManager.SetScoreText(score);
+                SizeController();
+                Destroy(other.gameObject); //Destroy the collided object
+            }
+            else
+            {
+                int point = newEnemyScore;
+                score = ComputeScore(score, point);
+                menuManager.SetScoreText(score);
+                SizeController();
+                Destroy(other.gameObject);
+            }
+        }
     }
 
     //This function is responsible for adding the points variable to the score

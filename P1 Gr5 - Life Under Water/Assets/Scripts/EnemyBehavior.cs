@@ -20,9 +20,12 @@ public class EnemyBehavior : MonoBehaviour
     NavMeshAgent agent;
     Transform target;
     public static int enemyScore;
-    public int disScore;
+    public int enemyScoreRangeStart = 1;
+    public int enemyScoreRangeEnd = 100;
+    [HideInInspector] public int disScore;
     private SpriteRenderer spriteRenderer;
     [SerializeField] float sizeIncrement;
+
 
     // Gets all scripts needed.
     public SharedBehavior sharedBehavior;
@@ -32,8 +35,9 @@ public class EnemyBehavior : MonoBehaviour
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
-        enemyScore = Random.Range(1, 100);
+        enemyScore = Random.Range(enemyScoreRangeStart, enemyScoreRangeEnd);
         disScore = enemyScore + 0;
+
         //Debug.LogFormat("Enemy score: {0}", enemyScore);
 
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -58,7 +62,6 @@ public class EnemyBehavior : MonoBehaviour
         GameObject Player = GameObject.Find("Player");
         PlayerManager playerManagement = Player.GetComponent<PlayerManager>();
         newScore = playerManagement.score;
-
 
         if ((enemyScore >= newScore) && (fdistance <= huntRadius)) //Moves towards the player if enemy score is higher than the player and within the huntRadius
         {
