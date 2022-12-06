@@ -66,9 +66,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Omkring 11 millioner tons plastik ryger ud i havet hvert \xE5r, og udover
-    det er der allerede omkring 200 millioner tons plastik der allerede flyder rundt
-    i havet.\r"
+  m_text: Der er nu 5.25 trillioner makro og mikro stykker af plastik i vores have,
+    og 46.000 stykker i hvert eneste kvadratmeter af havet, der vejer op til 269,00
+    tons.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 310b14e12e7f6b740a5898ef088212aa, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

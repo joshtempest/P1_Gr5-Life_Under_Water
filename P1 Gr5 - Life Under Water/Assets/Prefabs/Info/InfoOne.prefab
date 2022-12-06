@@ -66,8 +66,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "DIn nuv\xE6rende v\xE6gt, svarer til at \nDen gennemsnitlige person spiser
-    70.000 mikroplastik hvert \xE5r\r."
+  m_text: "12.000-14.000 tons plastik bliver indtaget af fisk i det nordlige stillehav
+    hvert \xE5r."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 310b14e12e7f6b740a5898ef088212aa, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

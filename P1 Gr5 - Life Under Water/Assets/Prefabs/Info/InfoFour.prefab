@@ -66,8 +66,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Det kan ende med at der er mere plast i havet end der er fisk i omkring
-    \xE5r 2050 (i v\xE6gt)\r."
+  m_text: "381 mil tons er hvad der bliver udledt i havet \xE5rligt, og vejer det
+    samme som hele den menneskelige population, 50% er engangsplastik"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 310b14e12e7f6b740a5898ef088212aa, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

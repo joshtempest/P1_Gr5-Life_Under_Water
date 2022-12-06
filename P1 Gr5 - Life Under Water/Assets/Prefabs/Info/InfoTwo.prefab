@@ -66,7 +66,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Plastikforurening dr\xE6ber omkring 100 tusind havdyr hvert \xE5r\r."
+  m_text: "8 millioner stykker plastik bliver hver dag udledt i havet. 236.00 er
+    indtagelige stykker mikroplastik som marinelivet misforst\xE5r som mad. "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 310b14e12e7f6b740a5898ef088212aa, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
