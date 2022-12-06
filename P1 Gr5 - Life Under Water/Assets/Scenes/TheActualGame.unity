@@ -2084,6 +2084,10 @@ PrefabInstance:
       propertyPath: sharedBehavior
       value: 
       objectReference: {fileID: 647596491}
+    - target: {fileID: 8066036512400159645, guid: 576daa601e9a2c64ea71b450d6985e19, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1d02fef408fbf409da52dba35ef370c4, type: 3}
     - target: {fileID: 8066036512400159646, guid: 576daa601e9a2c64ea71b450d6985e19, type: 3}
       propertyPath: m_RootOrder
       value: 6
