@@ -26,10 +26,10 @@ public class InfoManagement : MonoBehaviour
     {
 
 
-        if(pm.score >= currentWeightInfo[infoindex] && infoIndex < 4)
+        if(pm.score >= currentWeightInfo[infoIndex] && infoIndex < 4)
         {
             ShowInfo();
-            infoindex++;
+            infoIndex++;
         }
       
     }
