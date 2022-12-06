@@ -11,7 +11,6 @@ public class InfoManagement : MonoBehaviour
     public GameObject menuController;
     MenuManager mm;
     static int infoIndex = 0;
-    public int i = 0;
     public TextMeshProUGUI currentInfoText;
     public TextMeshProUGUI[] infoTexts;
 
@@ -25,42 +24,12 @@ public class InfoManagement : MonoBehaviour
 
     public void Update()
     {
-        
-        //for (int i = 0; i < currentWeightInfo.Length; i++); 
 
-        if (pm.score >= currentWeightInfo[0] && infoIndex < 4)
+
+        if(pm.score >= currentWeightInfo[infoindex] && infoIndex < 4)
         {
             ShowInfo();
-            infoIndex++;
-            currentWeightInfo[0] = currentWeightInfo[1];
-        }
-        else if (pm.score >= currentWeightInfo[0] && pm.score < currentWeightInfo[1] && infoIndex < 4)
-        {
-            ShowInfo();
-            infoIndex++;
-            currentWeightInfo[0] = currentWeightInfo[1];
-
-        }
-        else if (pm.score >= currentWeightInfo[1] && pm.score < currentWeightInfo[2] && infoIndex < 4)
-        {
-            ShowInfo();
-            infoIndex++;
-            currentWeightInfo[1] = currentWeightInfo[2];
-
-        }
-        else if (pm.score >= currentWeightInfo[2] && pm.score < currentWeightInfo[3] && infoIndex < 4)
-        {
-            ShowInfo();
-            infoIndex++;
-            currentWeightInfo[2] = currentWeightInfo[3];
-
-        }
-        else if (pm.score >= currentWeightInfo[3] && pm.score < currentWeightInfo[4] && infoIndex < 4)
-        {
-            ShowInfo();
-            infoIndex++;
-            currentWeightInfo[3] = currentWeightInfo[4];
-
+            infoindex++;
         }
       
     }
