@@ -2296,7 +2296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 651e48db7342228458d0f418f8a0cb97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObjectToSpawn: {fileID: 3413717452649241615, guid: 9725539c4eb9e78499fb28fec663ebfa, type: 3}
+  ObjectToSpawn: {fileID: 5601712429360960675, guid: 23b82d20c237c0a42871df9f15376ca5, type: 3}
   spawnSpeed: 0.001
   spawnAmount: 300
   minDistanceFromPlayer: 2
