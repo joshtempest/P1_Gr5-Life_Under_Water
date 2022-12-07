@@ -23,8 +23,8 @@ public class PlayerManager : MonoBehaviour
     SpriteRenderer sr; //The sprite renderer of the player.
     public Sprite[] playerSprites; //The collection of sprites for the player.
     public int[] sizeLimits; //The collection of sizes that are required to make the sprite change.
-    MenuManager menuManager; //In order to access the methods in "SceneControls".
-    [SerializeField] GameObject menuController; //The game object that has the script "SceneControls".
+    MenuManager menuManager; //In order to access the methods in "MenuManager".
+    [SerializeField] GameObject menuController; //The game object that has the script "MenuManager".
     UpgradeManagement upgradeManagement; //In order to access the methods in "UpgradeManagement".
     [SerializeField] GameObject upgradeMenu;
     EnemyBehavior enemyBehavior;

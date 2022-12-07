@@ -7,9 +7,9 @@ using TMPro;
 public class InfoManagement : MonoBehaviour
 {
     public GameObject player;
-    PlayerManager pm;
+    PlayerManager playerManager;
     public GameObject menuController;
-    MenuManager mm;
+    MenuManager menuManager;
     static int infoIndex = 0;
     public TextMeshProUGUI currentInfoText;
     public TextMeshProUGUI[] infoTexts;
@@ -18,15 +18,15 @@ public class InfoManagement : MonoBehaviour
 
     private void Start()
     {
-        pm = player.GetComponent<PlayerManager>();
-        mm = menuController.GetComponent<MenuManager>();
+        playerManager = player.GetComponent<PlayerManager>();
+        menuManager = menuController.GetComponent<MenuManager>();
     }
 
     public void Update()
     {
 
 
-        if(pm.score >= currentWeightInfo[infoIndex] && infoIndex < 4)
+        if(playerManager.score >= currentWeightInfo[infoIndex] && infoIndex < 4)
         {
             ShowInfo();
             infoIndex++;
@@ -36,7 +36,7 @@ public class InfoManagement : MonoBehaviour
 
     public void ShowInfo()
     {
-        mm.InfoMenu();
+        menuManager.InfoMenu();
         currentInfoText.text = infoTexts[infoIndex].text;
     }
 
