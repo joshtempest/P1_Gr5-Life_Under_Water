@@ -289,7 +289,7 @@ AudioSource:
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
-  Mute: 0
+  Mute: 1
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -566,6 +566,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1082900379}
+    - target: {fileID: 5780468671747574584, guid: 9a1de60f0c2fadd43a374764bdeddc3f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6013018956062174582, guid: 9a1de60f0c2fadd43a374764bdeddc3f, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1000,6 +1004,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1220819399}
     m_Modifications:
+    - target: {fileID: 4200592131004776959, guid: 93a30dd39758d8b4681c033ce5cd040a, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8a5dd0aaac66f6248949e37e141d7df2, type: 2}
+    - target: {fileID: 4200592131004776959, guid: 93a30dd39758d8b4681c033ce5cd040a, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -5008398413575492508, guid: 8a5dd0aaac66f6248949e37e141d7df2, type: 2}
     - target: {fileID: 4200592131378071063, guid: 93a30dd39758d8b4681c033ce5cd040a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1776,6 +1788,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1662766503, guid: 0711ca711be84b343b7f41ca610f2ba2, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6306794912245973598, guid: 0711ca711be84b343b7f41ca610f2ba2, type: 3}
       propertyPath: m_Name
       value: Environment
