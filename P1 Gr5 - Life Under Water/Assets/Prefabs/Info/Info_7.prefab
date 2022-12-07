@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4299159509639029860
+--- !u!1 &7283636578810973000
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,23 +8,23 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4299159509639029861}
-  - component: {fileID: 4299159509639029859}
-  - component: {fileID: 4299159509639029858}
+  - component: {fileID: 7283636578810973003}
+  - component: {fileID: 7283636578810973045}
+  - component: {fileID: 7283636578810973002}
   m_Layer: 5
-  m_Name: InfoSix
+  m_Name: Info_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &4299159509639029861
+--- !u!224 &7283636578810973003
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4299159509639029860}
+  m_GameObject: {fileID: 7283636578810973000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -38,21 +38,21 @@ RectTransform:
   m_AnchoredPosition: {x: -807.48145, y: -515}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &4299159509639029859
+--- !u!222 &7283636578810973045
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4299159509639029860}
+  m_GameObject: {fileID: 7283636578810973000}
   m_CullTransparentMesh: 1
---- !u!114 &4299159509639029858
+--- !u!114 &7283636578810973002
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4299159509639029860}
+  m_GameObject: {fileID: 7283636578810973000}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Der findes 5 plastiksupper i verdenen.\r"
+  m_text: "Hvert \xE5r bliver der dumpet 8 millioner tons plastik i havet."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 310b14e12e7f6b740a5898ef088212aa, type: 2}
   m_sharedMaterial: {fileID: -5119529325699955422, guid: 310b14e12e7f6b740a5898ef088212aa, type: 2}
