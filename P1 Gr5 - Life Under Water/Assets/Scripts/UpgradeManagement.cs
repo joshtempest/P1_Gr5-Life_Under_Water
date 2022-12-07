@@ -88,18 +88,19 @@ public class UpgradeManagement : MonoBehaviour
     }
 
     //Takes the score and the player size increment, "buys" the upgrade, and gives the info back to the player
-    public float[] IncreaseGrowth(int score, float playerIncrement)
+    public int[] IncreaseGrowth(int score, int playerIncrement, int growthMuliplier)
     {
-        float increasedGrowth = 0; //Declares the variable for the new size increment
-        float[] results = new float[2]; //The results that we need for the player (index [0] being the new score and [1] being the new size increment)
+        int increasedGrowth = 0; //Declares the variable for the new size increment
+        int[] results = new int[3]; //The results that we need for the player (index [0] being the new score, [1] being the new size increment and [2] being the new growth multiplier)
 
         //If the score is larger than the current price
         if (score > currentGrowthPrice)
         {
             results[0] = score - currentGrowthPrice; //The first result is the new score (the old score minus the price)
-            increasedGrowth = playerIncrement + growthIncrease; //The new size increment is defined as the old minus the increase.
+            increasedGrowth = playerIncrement - growthIncrease; //The new size increment is defined as the old minus the increase.
             growthUpgradeLevel++; //Sets the amount of bought upgrades up
             results[1] = increasedGrowth; //The second result is the new size increment
+            results[2] = growthMuliplier + 2;
         }
         else
         {
@@ -107,6 +108,7 @@ public class UpgradeManagement : MonoBehaviour
             increasedGrowth = playerIncrement;
             results[0] = score;
             results[1] = increasedGrowth;
+            results[2] = growthMuliplier;
         }
 
         return results;
