@@ -51,3 +51,4 @@ MonoBehaviour:
   pauseMenuButton: {fileID: 0}
   pauseMenu: {fileID: 0}
   achievementButton: {fileID: 0}
+  infoMenu: {fileID: 0}

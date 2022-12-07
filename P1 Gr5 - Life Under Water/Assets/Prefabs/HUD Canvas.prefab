@@ -142,7 +142,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "V\xE6gt: "
+  m_text: "V\xE6gt: 1 kg"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8a5dd0aaac66f6248949e37e141d7df2, type: 2}
   m_sharedMaterial: {fileID: -5008398413575492508, guid: 8a5dd0aaac66f6248949e37e141d7df2, type: 2}
@@ -1007,7 +1007,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8351471554603789673
 RectTransform:
   m_ObjectHideFlags: 0

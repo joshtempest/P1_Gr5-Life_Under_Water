@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 5107993932871535305}
   - component: {fileID: 647731555}
   - component: {fileID: 647731560}
+  - component: {fileID: 739022342}
+  - component: {fileID: 739022343}
   m_Layer: 0
   m_Name: SpawnController
   m_TagString: Untagged
@@ -49,7 +51,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectToSpawn: {fileID: 0}
   spawnSpeed: 0.001
-  spawnAmount: 3
+  spawnAmount: 10
   minDistanceFromPlayer: 7
 --- !u!114 &5107993932871535305
 MonoBehaviour:
@@ -65,7 +67,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectToSpawn: {fileID: 0}
   spawnSpeed: 0.001
-  spawnAmount: 20
+  spawnAmount: 30
   minDistanceFromPlayer: 5
 --- !u!114 &647731555
 MonoBehaviour:
@@ -81,7 +83,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectToSpawn: {fileID: 0}
   spawnSpeed: 0.001
-  spawnAmount: 20
+  spawnAmount: 30
   minDistanceFromPlayer: 5
 --- !u!114 &647731560
 MonoBehaviour:
@@ -97,5 +99,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectToSpawn: {fileID: 0}
   spawnSpeed: 0.001
-  spawnAmount: 20
-  minDistanceFromPlayer: 0
+  spawnAmount: 30
+  minDistanceFromPlayer: 5
+--- !u!114 &739022342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5107993932871535311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 651e48db7342228458d0f418f8a0cb97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectToSpawn: {fileID: 0}
+  spawnSpeed: 0.001
+  spawnAmount: 30
+  minDistanceFromPlayer: 5
+--- !u!114 &739022343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5107993932871535311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 651e48db7342228458d0f418f8a0cb97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectToSpawn: {fileID: 0}
+  spawnSpeed: 0.001
+  spawnAmount: 2
+  minDistanceFromPlayer: 20

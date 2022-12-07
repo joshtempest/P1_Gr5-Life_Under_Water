@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7576338129439769197}
   - component: {fileID: 7576338129439769196}
   - component: {fileID: 7576338129439769195}
+  - component: {fileID: 7576338129439769199}
   m_Layer: 0
   m_Name: FoodSpawnController
   m_TagString: Untagged
@@ -50,7 +51,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectToSpawn: {fileID: 4911810576054479270, guid: 631a769929939a6479ab5df05e0833ef, type: 3}
   spawnSpeed: 0.001
-  spawnAmount: 10
+  spawnAmount: 50
   minDistanceFromPlayer: 5
 --- !u!114 &7576338129439769198
 MonoBehaviour:
@@ -66,8 +67,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectToSpawn: {fileID: 5786436319613874500, guid: 193c566f1b8d25e4a978e26dd528866b, type: 3}
   spawnSpeed: 0.001
-  spawnAmount: 20
-  minDistanceFromPlayer: 5
+  spawnAmount: 300
+  minDistanceFromPlayer: 2
 --- !u!114 &7576338129439769197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82,8 +83,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectToSpawn: {fileID: 273135697964025151, guid: 612eb0f5a6d660946945162a85b61116, type: 3}
   spawnSpeed: 0.001
-  spawnAmount: 20
-  minDistanceFromPlayer: 5
+  spawnAmount: 300
+  minDistanceFromPlayer: 2
 --- !u!114 &7576338129439769196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,8 +99,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectToSpawn: {fileID: 2716890015855143532, guid: 5e4a88808564948438f7d5dc6e5a01b4, type: 3}
   spawnSpeed: 0.001
-  spawnAmount: 20
-  minDistanceFromPlayer: 5
+  spawnAmount: 300
+  minDistanceFromPlayer: 2
 --- !u!114 &7576338129439769195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,5 +115,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectToSpawn: {fileID: 4367112265524044404, guid: e77c8df21ab9e4d4ab5a2db84e7e9d22, type: 3}
   spawnSpeed: 0.001
-  spawnAmount: 20
-  minDistanceFromPlayer: 5
+  spawnAmount: 300
+  minDistanceFromPlayer: 2
+--- !u!114 &7576338129439769199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 531167304499356567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 651e48db7342228458d0f418f8a0cb97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectToSpawn: {fileID: 5601712429360960675, guid: 23b82d20c237c0a42871df9f15376ca5, type: 3}
+  spawnSpeed: 0.001
+  spawnAmount: 300
+  minDistanceFromPlayer: 2
