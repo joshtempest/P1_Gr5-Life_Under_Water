@@ -66,8 +66,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Omkring 8 millioner stykker plastik ender i havet hver dag, hvilket l\xF8ber
-    op i en samlet udledning p\xE5 8 millioner tons \xE5rligt."
+  m_text: "Der findes 5 plastiksupper i verdenen. \n\u201DPlastiksuppe\u201D er betegnelsen
+    for store koncentrationer af mikroplastik i verdenshavene."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 310b14e12e7f6b740a5898ef088212aa, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 8
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0

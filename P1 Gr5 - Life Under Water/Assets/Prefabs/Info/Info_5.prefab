@@ -66,8 +66,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Der findes 5 plastiksupper i verdenen. Plastiksupper store koncentrationer
-    af mikroplastik i verdenshavene.
+  m_text: "Omkring 8 millioner stykker plastik ender i havet hver dag, hvilket l\xF8ber
+    op i en samlet udledning p\xE5 8 millioner tons \xE5rligt."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 310b14e12e7f6b740a5898ef088212aa, type: 2}
   m_sharedMaterial: {fileID: -5119529325699955422, guid: 310b14e12e7f6b740a5898ef088212aa, type: 2}
