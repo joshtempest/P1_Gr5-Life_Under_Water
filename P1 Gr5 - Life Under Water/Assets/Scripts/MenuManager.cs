@@ -59,7 +59,7 @@ public class MenuManager : MonoBehaviour
     //Sets up the score text to show the score
     public void SetScoreText(int score)
     {
-        scoreText.text = "Vægt: " + score.ToString() + " kg";
+        scoreText.text = "Vægt:\n" + score.ToString() + " kg";
     }
 
     //Pauses the game through time.timescale and makes the "Game Over Panel" appear.
