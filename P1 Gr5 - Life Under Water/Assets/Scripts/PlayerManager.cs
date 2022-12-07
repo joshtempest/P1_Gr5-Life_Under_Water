@@ -138,9 +138,9 @@ public class PlayerManager : MonoBehaviour
     }
 
     //This function is responsible for adding the points variable to the score
-    int ComputeScore(int a, int b)
+    int ComputeScore(int scoreArgument, int pointArgument)
     {
-        int computedScore = a + b * growthMultiplier;
+        int computedScore = scoreArgument + (pointArgument * growthMultiplier);
 
         return computedScore;
     }
@@ -148,7 +148,7 @@ public class PlayerManager : MonoBehaviour
     //This function is responsible for adjusting the size of the player object
     void SizeController() 
     {
-        playerSize = 3 + (score / sizeIncrement); // Determines the size of the player object. Devides score by sizeUp to control growth of the player object
+        playerSize = 3 + ((float)score / (float)sizeIncrement); // Determines the size of the player object. Devides score by sizeUp to control growth of the player object
         cameraSize = score / sizeIncrement; // Determines the size of the camera.
         Vector3 sizeVector = new Vector3(playerSize, playerSize, 0); //Creates a new vecter called "sizeVector" which is based on the size variable.
         transform.localScale = sizeVector; //Uses the sizeVector to grow the player object. (Sets scale of object to sizeVector's values)

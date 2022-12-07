@@ -66,9 +66,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Der er nu 5.25 billioner makro og mikro stykker af plastik i vores have,
-    og 46.000 stykker i hvert eneste kvadratmeter af havet, der vejer op til 269.000
-    tons.
+  m_text: "Der er 500 gange s\xE5 mange plastikpartikler i havet end der er stjerner
+    i vores galakse. (51 Billioner)"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 310b14e12e7f6b740a5898ef088212aa, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

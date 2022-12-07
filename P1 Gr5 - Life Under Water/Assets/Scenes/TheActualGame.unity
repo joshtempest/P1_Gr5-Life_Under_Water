@@ -879,7 +879,7 @@ PrefabInstance:
       objectReference: {fileID: 1290965338}
     - target: {fileID: 3726404025996278163, guid: bcfe7f4a24978dd48bc9d97e69a03f59, type: 3}
       propertyPath: sizeIncrement
-      value: 100000
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 3726404025996278163, guid: bcfe7f4a24978dd48bc9d97e69a03f59, type: 3}
       propertyPath: infoController
@@ -897,6 +897,22 @@ PrefabInstance:
       propertyPath: variableJoystick
       value: 
       objectReference: {fileID: 925851659}
+    - target: {fileID: 3726404025996278163, guid: bcfe7f4a24978dd48bc9d97e69a03f59, type: 3}
+      propertyPath: sizeLimits.Array.data[0]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3726404025996278163, guid: bcfe7f4a24978dd48bc9d97e69a03f59, type: 3}
+      propertyPath: sizeLimits.Array.data[1]
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3726404025996278163, guid: bcfe7f4a24978dd48bc9d97e69a03f59, type: 3}
+      propertyPath: sizeLimits.Array.data[2]
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3726404025996278163, guid: bcfe7f4a24978dd48bc9d97e69a03f59, type: 3}
+      propertyPath: sizeLimits.Array.data[3]
+      value: 10000
+      objectReference: {fileID: 0}
     - target: {fileID: 3726404025996278163, guid: bcfe7f4a24978dd48bc9d97e69a03f59, type: 3}
       propertyPath: sizeLimits.Array.data[4]
       value: 1000000
@@ -1254,7 +1270,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1662766502
 Transform:
   m_ObjectHideFlags: 0
@@ -1832,6 +1848,26 @@ PrefabInstance:
       propertyPath: infoTexts.Array.data[6]
       value: 
       objectReference: {fileID: 7283636578810973002, guid: a92ccb8182fc3ad42ad5df89c23834cd, type: 3}
+    - target: {fileID: 452535487093326236, guid: 1dd375df2db2efb49ba2a786f3cea45c, type: 3}
+      propertyPath: currentWeightInfo.Array.data[0]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 452535487093326236, guid: 1dd375df2db2efb49ba2a786f3cea45c, type: 3}
+      propertyPath: currentWeightInfo.Array.data[1]
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 452535487093326236, guid: 1dd375df2db2efb49ba2a786f3cea45c, type: 3}
+      propertyPath: currentWeightInfo.Array.data[2]
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 452535487093326236, guid: 1dd375df2db2efb49ba2a786f3cea45c, type: 3}
+      propertyPath: currentWeightInfo.Array.data[3]
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 452535487093326236, guid: 1dd375df2db2efb49ba2a786f3cea45c, type: 3}
+      propertyPath: currentWeightInfo.Array.data[4]
+      value: 100000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1dd375df2db2efb49ba2a786f3cea45c, type: 3}
 --- !u!4 &680536037300447701 stripped
