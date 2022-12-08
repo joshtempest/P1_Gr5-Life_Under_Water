@@ -28,7 +28,9 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] GameObject menuController; //The game object that has the script "MenuManager".
     UpgradeManagement upgradeManagement; //In order to access the methods in "UpgradeManagement".
     [SerializeField] GameObject upgradeMenu;
+
     EnemyBehavior enemyBehavior;
+
 
     [SerializeField] GameObject infoController;
     InfoManagement im;
@@ -87,7 +89,8 @@ public class PlayerManager : MonoBehaviour
         }
         if (other.gameObject.tag == "Enemy") //If collided object have the tag "Object"
         {
-            int newEnemyScore = EnemyBehavior.enemyScore;
+            enemyBehavior = other.gameObject.GetComponent<EnemyBehavior>(); //Allows this script to access code from the collided gameobject.
+            int newEnemyScore = enemyBehavior.enemyScore;
             if (newEnemyScore >= score) 
             {
                 int points = -newEnemyScore; //Local variable that determines how how the score should increase
@@ -117,7 +120,8 @@ public class PlayerManager : MonoBehaviour
         }
         if (other.gameObject.tag == "Enemy_Boat") //If collided object have the tag "Object"
         {
-            int newEnemyScore = EnemyBehavior.enemyScore;
+            enemyBehavior = other.gameObject.GetComponent<EnemyBehavior>(); //Allows this script to access code from the collided gameobject.
+            int newEnemyScore = enemyBehavior.enemyScore;
             if (newEnemyScore >= score)
             {
                 int points = -newEnemyScore; //Local variable that determines how how the score should increase

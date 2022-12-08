@@ -19,7 +19,7 @@ public class EnemyBehavior : MonoBehaviour
     //public float pickUpRadius = 15f;
     NavMeshAgent agent;
     Transform target;
-    public static int enemyScore;
+    public int enemyScore;
     public int enemyScoreRangeStart = 1;
     public int enemyScoreRangeEnd = 100;
     [HideInInspector] public int disScore;
@@ -95,12 +95,16 @@ public class EnemyBehavior : MonoBehaviour
         Debug.Log("Enemy Size = " + enemySize); //Prints enemySize to console
     }
 
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Wall") //Detect if collided with wall.
         {
             Destroy(gameObject); //Destroy the attached object
         }
+        if (other.gameObject.tag == "Prey")
+        {
+            Physics2D.IgnoreCollision(other.gameObject.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+        }
     }
-
 }
