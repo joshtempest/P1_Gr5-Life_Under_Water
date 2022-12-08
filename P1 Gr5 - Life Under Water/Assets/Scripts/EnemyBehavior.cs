@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SocialPlatforms;
 using UnityEngine.SocialPlatforms.Impl;
 
 public class EnemyBehavior : MonoBehaviour
@@ -25,7 +26,6 @@ public class EnemyBehavior : MonoBehaviour
     [HideInInspector] public int disScore;
     private SpriteRenderer spriteRenderer;
     [SerializeField] float sizeIncrement;
-
 
     // Gets all scripts needed.
     public SharedBehavior sharedBehavior;
@@ -67,16 +67,16 @@ public class EnemyBehavior : MonoBehaviour
         {
             rb.rotation = angle; //rotates to face the player
             sharedBehavior.MoveCharacter(movement, rb, moveSpeed); //Gets the moveCharacter functionality from the SharedBehavior script. 
-            spriteRenderer.flipX = false; //Ensures that the sprite is not flipped when not supposed to.
-            sharedBehavior.SpriteFlipper(rb, spriteRenderer); //Gets the SpriteFlipper functionality from the SharedBehavior script.
+            sharedBehavior.ObjectFlipper(rb, "unflipX");
+            sharedBehavior.ObjectFlipper(rb, "stayUpright");
         }
 
         if ((enemyScore < newScore) && (fdistance <= fleeRadius)) //Moves away from the player if enemy score is lower than the player and within the fleeRadius
         {
             rb.rotation = angle; //rotates to face the player
             sharedBehavior.MoveCharacter(-movement, rb, moveSpeed); //Gets the moveCharacter functionality from the SharedBehavior script. Note that "movement" is negative here, this is to make the enemy move away from the player instead of towards.
-            spriteRenderer.flipX = true; //Flips the sprite on the "X" axis so that it faces the correct way.
-            sharedBehavior.SpriteFlipper(rb, spriteRenderer); //Gets the SpriteFlipper functionality from the SharedBehavior script.
+            sharedBehavior.ObjectFlipper(rb, "flipX"); //Flips the sprite on the "X" axis so that it faces the correct way.
+            sharedBehavior.ObjectFlipper(rb, "stayUpright");
         }
 
     }
@@ -101,10 +101,6 @@ public class EnemyBehavior : MonoBehaviour
         if (other.gameObject.tag == "Wall") //Detect if collided with wall.
         {
             Destroy(gameObject); //Destroy the attached object
-        }
-        if (other.gameObject.tag == "Prey")
-        {
-            Physics2D.IgnoreCollision(other.gameObject.GetComponent<Collider2D>(), GetComponent<Collider2D>());
         }
     }
 }

@@ -66,8 +66,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Der er 500 gange s\xE5 mange plastikpartikler i havet som der er stjerner
-    i vores galakse. (51 billioner plastikpartikler)"
+  m_text: "At der er 500 gange s\xE5 mange plastikpartikler i havet som der er stjerner
+    i vores galakse? (51 billioner plastikpartikler)"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 310b14e12e7f6b740a5898ef088212aa, type: 2}
   m_sharedMaterial: {fileID: -5119529325699955422, guid: 310b14e12e7f6b740a5898ef088212aa, type: 2}

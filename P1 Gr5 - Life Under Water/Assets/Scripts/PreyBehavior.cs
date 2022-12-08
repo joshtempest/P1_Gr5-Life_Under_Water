@@ -47,8 +47,8 @@ public class PreyBehavior : MonoBehaviour
         {
             rb.rotation = angle; //rotates to face the player
             sharedBehavior.MoveCharacter(movement, rb, moveSpeed); //Gets the moveCharacter functionality from the SharedBehavior script. 
-            spriteRenderer.flipX = true; //Flips the sprite on the "X" axis.
-            sharedBehavior.SpriteFlipper(rb, spriteRenderer); //Gets the SpriteFlipper functionality from the SharedBehavior script. 
+            sharedBehavior.ObjectFlipper(rb, "flipX");
+            sharedBehavior.ObjectFlipper(rb, "stayUpright");
         }
     }
 

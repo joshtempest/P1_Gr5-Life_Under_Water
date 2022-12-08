@@ -66,8 +66,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "12.000-14.000 tons plastik bliver indtaget af fisk i det Nordlige Stillehav
-    hvert \xE5r. Dette skyldes at de tror at det er f\xF8de."
+  m_text: "At 12.000-14.000 tons plastik bliver indtaget af fisk i det Nordlige Stillehav
+    hvert \xE5r? Dette skyldes at de tror at det er f\xF8de."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 310b14e12e7f6b740a5898ef088212aa, type: 2}
   m_sharedMaterial: {fileID: -5119529325699955422, guid: 310b14e12e7f6b740a5898ef088212aa, type: 2}
