@@ -11,7 +11,7 @@ public class EndScene : MonoBehaviour
     
     private void Start()
     {
-        totalScoreText.text = "Total vægt: " + totalScore + " kg";        
+        totalScoreText.text = "Total vægt:\n" + totalScore.ToString() + " kg";        
     }
 
     public void PlayAgain()

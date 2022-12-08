@@ -297,7 +297,7 @@ AudioSource:
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
-  Mute: 1
+  Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -1112,45 +1112,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1220819399}
     m_Modifications:
-    - target: {fileID: 4200592131004776959, guid: 93a30dd39758d8b4681c033ce5cd040a, type: 3}
-      propertyPath: m_Maskable
-      value: 1
+    - target: {fileID: 4200592131004776956, guid: 93a30dd39758d8b4681c033ce5cd040a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 150.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 4200592131004776956, guid: 93a30dd39758d8b4681c033ce5cd040a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 313.25
       objectReference: {fileID: 0}
     - target: {fileID: 4200592131004776959, guid: 93a30dd39758d8b4681c033ce5cd040a, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 751ea442919fa21449f486214f96ec22, type: 2}
-    - target: {fileID: 4200592131004776959, guid: 93a30dd39758d8b4681c033ce5cd040a, type: 3}
-      propertyPath: m_isRichText
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4200592131004776959, guid: 93a30dd39758d8b4681c033ce5cd040a, type: 3}
-      propertyPath: m_enableKerning
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4200592131004776959, guid: 93a30dd39758d8b4681c033ce5cd040a, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: -5008398413575492508, guid: 751ea442919fa21449f486214f96ec22, type: 2}
-    - target: {fileID: 4200592131004776959, guid: 93a30dd39758d8b4681c033ce5cd040a, type: 3}
-      propertyPath: checkPaddingRequired
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4200592131004776959, guid: 93a30dd39758d8b4681c033ce5cd040a, type: 3}
-      propertyPath: m_enableExtraPadding
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4200592131004776959, guid: 93a30dd39758d8b4681c033ce5cd040a, type: 3}
-      propertyPath: m_parseCtrlCharacters
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4200592131004776959, guid: 93a30dd39758d8b4681c033ce5cd040a, type: 3}
-      propertyPath: m_useMaxVisibleDescender
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4200592131004776959, guid: 93a30dd39758d8b4681c033ce5cd040a, type: 3}
-      propertyPath: m_IsTextObjectScaleStatic
-      value: 0
+      propertyPath: m_text
+      value: "V\xE6gt: \n1 kg"
       objectReference: {fileID: 0}
     - target: {fileID: 4200592131378071063, guid: 93a30dd39758d8b4681c033ce5cd040a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
