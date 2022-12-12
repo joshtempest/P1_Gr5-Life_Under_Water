@@ -37,48 +37,40 @@ public class EnemyBehavior : MonoBehaviour
         rb = this.GetComponent<Rigidbody2D>();
         enemyScore = Random.Range(enemyScoreRangeStart, enemyScoreRangeEnd);
         disScore = enemyScore + 0;
-
-        //Debug.LogFormat("Enemy score: {0}", enemyScore);
-
-        spriteRenderer = GetComponent<SpriteRenderer>();
-
         EnemySize();
     }
 
-    //
-    private void FixedUpdate() //Using FixedUpdate here so that the enemy stops moving when the game is paused.
+    // Using FixedUpdate here so that the enemy stops moving when the game is paused.
+    // Responsible for the behavior of an enemy GameObject.
+    private void FixedUpdate()
     {
         player = GameObject.Find("Player").transform;
-        Vector3 distance = player.position - transform.position; //Finds the distance between enemy and player
-        float angle = Mathf.Atan2(distance.y, distance.x) * Mathf.Rad2Deg; //Gets the angle between the enemy and the player in radians which is then converted
-        float fdistance = Mathf.Sqrt(Mathf.Pow(distance.x, 2) + Mathf.Pow(distance.y, 2)); //Finds pythagoras to find the distance to the player as a float
-        distance.Normalize(); //Normalizes the distance vector, since we only need the direction
+        Vector3 distance = player.position - transform.position;
+        float angle = Mathf.Atan2(distance.y, distance.x) * Mathf.Rad2Deg;
+        float fdistance = Mathf.Sqrt(Mathf.Pow(distance.x, 2) + Mathf.Pow(distance.y, 2));
+        distance.Normalize();
         movement = distance;
-
-        ///<Summary>
-        ///Finds the player so that the player score can be used to compare the enemy score with the player score
-        /// </Summary>
         
         GameObject Player = GameObject.Find("Player");
         PlayerManager playerManagement = Player.GetComponent<PlayerManager>();
         newScore = playerManagement.score;
 
-        if ((enemyScore >= newScore) && (fdistance <= huntRadius)) //Moves towards the player if enemy score is higher than the player and within the huntRadius
+        // Moves towards the player if enemy score is higher than the player and within the huntRadius
+        if ((enemyScore >= newScore) && (fdistance <= huntRadius))
         {
-            rb.rotation = angle; //rotates to face the player
-            sharedBehavior.MoveCharacter(movement, rb, moveSpeed); //Gets the moveCharacter functionality from the SharedBehavior script. 
+            rb.rotation = angle;
+            sharedBehavior.MoveCharacter(movement, rb, moveSpeed);
             sharedBehavior.ObjectFlipper(rb, "unflipX");
             sharedBehavior.ObjectFlipper(rb, "stayUpright");
         }
-
-        if ((enemyScore < newScore) && (fdistance <= fleeRadius)) //Moves away from the player if enemy score is lower than the player and within the fleeRadius
+        // Moves away from the player if enemy score is lower than the player and within the fleeRadius
+        if ((enemyScore < newScore) && (fdistance <= fleeRadius))
         {
-            rb.rotation = angle; //rotates to face the player
-            sharedBehavior.MoveCharacter(-movement, rb, moveSpeed); //Gets the moveCharacter functionality from the SharedBehavior script. Note that "movement" is negative here, this is to make the enemy move away from the player instead of towards.
-            sharedBehavior.ObjectFlipper(rb, "flipX"); //Flips the sprite on the "X" axis so that it faces the correct way.
+            rb.rotation = angle;
+            sharedBehavior.MoveCharacter(-movement, rb, moveSpeed);
+            sharedBehavior.ObjectFlipper(rb, "flipX");
             sharedBehavior.ObjectFlipper(rb, "stayUpright");
         }
-
     }
     private void OnDrawGizmosSelected() //Visualises the look radius to help with making and testing the game
     {
@@ -86,12 +78,12 @@ public class EnemyBehavior : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, huntRadius);
     }
 
+    // This method is used to change the size of the GameObject
     void EnemySize()
     {
-        float enemySize = 1 + (enemyScore / sizeIncrement); // Determines the size of the player object. Devides score by sizeUp to control growth of the player object
+        float enemySize = 1 + (enemyScore / sizeIncrement); // Determines the size of the enemy object. Devides score by sizeUp to control growth of the enemy object
         Vector3 sizeVector = new Vector3(enemySize, enemySize, 0); //Creates a new vecter called "sizeVector" which is based on the size variable.
         transform.localScale = sizeVector; //Uses the sizeVector to grow the player object. (Sets scale of object to sizeVector's values)
-        //SpriteController(); //Runs SpriteController function which is responsible for changing out the player sprites
         Debug.Log("Enemy Size = " + enemySize); //Prints enemySize to console
     }
 
