@@ -24,16 +24,14 @@ public class InfoManagement : MonoBehaviour
 
     public void Update()
     {
-
-
         if(playerManager.score >= currentWeightInfo[infoIndex] && infoIndex < 4)
         {
             ShowInfo();
             infoIndex++;
         }
-      
     }
 
+    // Calls menuManager.InfoMenu() to show the information menu.
     public void ShowInfo()
     {
         menuManager.InfoMenu();
