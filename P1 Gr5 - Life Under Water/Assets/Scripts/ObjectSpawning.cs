@@ -5,6 +5,9 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using static UnityEngine.GraphicsBuffer;
 
+/// <summary>
+/// This script controls everything to do with spawning of objects.
+/// </summary>
 public class ObjectSpawning : MonoBehaviour
 {
     public GameObject ObjectToSpawn; // The object that should spawn.
@@ -25,9 +28,7 @@ public class ObjectSpawning : MonoBehaviour
         InvokeRepeating("Generate", 0, spawnSpeed);
     }
 
-    /// <summary>
-    /// This function is responsible for generating objects.
-    /// </summary>
+    // This function is responsible for generating objects.
     void Generate()
     {
         if (GameObject.FindGameObjectsWithTag(ObjectToSpawn.tag).Length < spawnAmount) // Doesn't allow for spawning more that the specified spawn amount.
@@ -45,6 +46,6 @@ public class ObjectSpawning : MonoBehaviour
             {
                 Instantiate(ObjectToSpawn, spawnPosition, Quaternion.identity); // Clones the GameObject prefab.
             }
-       }
-   }
+        }
+    }
 }

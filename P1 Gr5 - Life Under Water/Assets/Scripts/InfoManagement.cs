@@ -4,6 +4,9 @@ using System;
 using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// This script controls everything related to the information popups.
+/// </summary>
 public class InfoManagement : MonoBehaviour
 {
     public GameObject player;
@@ -22,6 +25,7 @@ public class InfoManagement : MonoBehaviour
         menuManager = menuController.GetComponent<MenuManager>();
     }
 
+    // Responsible for checking when the score exceeds information thresholds.
     public void Update()
     {
         if(playerManager.score >= currentWeightInfo[infoIndex] && infoIndex < 4)

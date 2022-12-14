@@ -7,6 +7,9 @@ using UnityEngine.AI;
 using UnityEngine.SocialPlatforms;
 using UnityEngine.SocialPlatforms.Impl;
 
+/// <summary>
+/// This script controls everything to do with the behavior of enemy gameobjects.
+/// </summary>
 public class EnemyBehavior : MonoBehaviour
 {
     int playerScore; // Score of the player.
@@ -63,24 +66,14 @@ public class EnemyBehavior : MonoBehaviour
             sharedBehavior.ObjectFlipper(rb, "stayUpright");
         }
     }
-    
-    //Visualises the look radius to help with making and testing the game
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, huntRadius);
-        Gizmos.DrawWireSphere(transform.position, fleeRadius);
-    }
 
-    /// <summary>
-    /// This method is used to change the size of the GameObject
-    /// </summary>
+    // This method is used to change the size of the GameObject
     void EnemySize()
     {
-        float enemySize = 1 + (enemyScore / sizeIncrement); // Determines the size of the enemy object. Devides score by sizeUp to control growth of the enemy object
-        Vector3 sizeVector = new Vector3(enemySize, enemySize, 0); //Creates a new vecter called "sizeVector" which is based on the size variable.
-        transform.localScale = sizeVector; //Uses the sizeVector to grow the player object. (Sets scale of object to sizeVector's values)
-        Debug.Log("Enemy Size = " + enemySize); //Prints enemySize to console
+        float enemySize = 1 + (enemyScore / sizeIncrement); // Calculates the what the size of the enemy object should be.
+        Vector3 sizeVector = new Vector3(enemySize, enemySize, 0); // Creates a new vecter called "sizeVector" which is based on the size variable.
+        transform.localScale = sizeVector; // Sets scale of the enemy object to sizeVector's values.
+        Debug.Log("Enemy Size = " + enemySize); // Prints enemySize to console.
     }
 
     // This method destroys the enemy if it collieds with an object that has the tag "wall".
@@ -90,5 +83,13 @@ public class EnemyBehavior : MonoBehaviour
         {
             Destroy(gameObject); //Destroy the attached object
         }
+    }
+
+    //Visualises the look radius to help with making and testing the game
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, huntRadius);
+        Gizmos.DrawWireSphere(transform.position, fleeRadius);
     }
 }

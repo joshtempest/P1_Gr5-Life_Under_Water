@@ -4,15 +4,14 @@ using System.Threading.Tasks;
 using Unity.VisualScripting;
 using UnityEngine;
 
+/// <summary>
+/// This script contains shared behaviors that are used in PreyBehavior and EnemyBehavior.
+/// </summary>
 public class SharedBehavior : MonoBehaviour
 {
-    /// <summary>
-    /// This method is responsible for flipping the object in various ways when used. 
-    /// Takes Rigidbody2D and a string as parameters. 
-    /// The string is used to determine which kind of task to perform.
-    /// </summary>
-    /// <param name="rb"></param>
-    /// <param name="task"></param>
+    // This method is responsible for flipping the object in various ways when used. 
+    // Takes Rigidbody2D and a string as parameters. 
+    // The string is used to determine which kind of task to perform.
     public void ObjectFlipper(Rigidbody2D rb, string task)
     {
         // This portion is responsible for making the object in question always stand upright.
@@ -49,12 +48,8 @@ public class SharedBehavior : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// This method calculates the differentiating vector between the player position and the other given object.
-    /// Takes the position of the object as a parameter (Vector3).
-    /// </summary>
-    /// <param name="objectPosition"></param>
-    /// <returns></returns>
+    // This method calculates the differentiating vector between the player position and the other given object.
+    // Takes the position of the object as a parameter (Vector3).
     public Vector3 CalculateDistance(Vector3 objectPosition)
     {
         Vector3 playerPosition = GameObject.Find("Player").transform.position;
@@ -62,12 +57,8 @@ public class SharedBehavior : MonoBehaviour
         return distance;
     }
 
-    /// <summary>
-    /// This method calculates the angle to the player and returns it as a float.
-    /// Takes the Transform of an object as a parameter.
-    /// </summary>
-    /// <param name="objectPosition"></param>
-    /// <returns></returns>
+    // This method calculates the angle to the player and returns it as a float.
+    // Takes the Transform of an object as a parameter.
     public float CalculateAngle(Vector3 objectPosition)
     {
         Vector3 distance = CalculateDistance(objectPosition);
@@ -75,12 +66,8 @@ public class SharedBehavior : MonoBehaviour
         return angle;
     }
 
-    /// <summary>
-    /// This method calculates the distance between an object and the player and returns it as a float.
-    /// Takes the Transform of the object as a parameter.
-    /// </summary>
-    /// <param name="otherObject"></param>
-    /// <returns></returns>
+    // This method calculates the distance between an object and the player and returns it as a float.
+    // Takes the Transform of the object as a parameter.
     public float CalculateFloatDistance(Vector3 objectPosition)
     {
         Vector3 distance = CalculateDistance(objectPosition);
@@ -88,13 +75,8 @@ public class SharedBehavior : MonoBehaviour
         return fdistance;
     }
 
-    /// <summary>
-    /// This method is responsible for making an object move.
-    /// Takes Vector2, RigidBody2D and float as parameters.
-    /// </summary>
-    /// <param name="direction"></param>
-    /// <param name="rb"></param>
-    /// <param name="moveSpeed"></param>
+    // This method is responsible for making an object move.
+    // Takes Vector2, RigidBody2D and float as parameters.
     public void MoveCharacter(Vector2 direction, Rigidbody2D rb, float moveSpeed)
     {
         // Moves the object based on the product of the direction vector, moveSpeed and time.

@@ -8,6 +8,9 @@ using Unity.VisualScripting;
 using System;
 using Unity.VisualScripting.Antlr3.Runtime;
 
+/// <summary>
+/// This script controls everything related to menus.
+/// </summary>
 public class MenuManager : MonoBehaviour
 {
     //Includes elements based on "Roll-a-Ball - Displaying Score and Text" by Unity: https://learn.unity.com/tutorial/displaying-score-and-text?uv=2019.4&projectId=5f158f1bedbc2a0020e51f0d
@@ -39,19 +42,14 @@ public class MenuManager : MonoBehaviour
         //pauseMenuButton.SetActive(true);
     }
 
-    /// <summary>
-    /// Loads to a specific scene (Specified in the inspector).
-    /// </summary>
-    /// <param name="sceneNumber"></param>
+    // Loads to a specific scene (Specified in the inspector).
     public void LoadScene(int sceneNumber)
     {
         SceneManager.LoadScene(sceneNumber);
         Time.timeScale = 1;
     }
 
-    /// <summary>
-    /// Reloads the current level when called.
-    /// </summary>
+    // Reloads the current level when called.
     public void RestartGame()
     {
         LoadScene(SceneManager.GetActiveScene().buildIndex); //Loads the currently active scene (Meant for the game scene)
@@ -60,18 +58,13 @@ public class MenuManager : MonoBehaviour
         ResumeGame(); //Resumes the game to make sure it isn't paused.
     }
 
-    /// <summary>
-    /// Sets up the score text to show the score
-    /// </summary>
-    /// <param name="score"></param>
+    // Sets up the score text to show the score
     public void SetScoreText(int score)
     {
         scoreText.text = "Vægt:\n" + score.ToString() + " kg";
     }
 
-    /// <summary>
-    /// Pauses the game through time.timescale and makes the "Game Over Panel" appear.
-    /// </summary>
+    // Pauses the game through time.timescale and makes the "Game Over Panel" appear.
     public void GameOver()
     {
         gameOverScreen.SetActive(true); //Turns the game over sceen active
@@ -80,10 +73,7 @@ public class MenuManager : MonoBehaviour
         PauseGame(); //Calls PauseGame() function to pause the game.
     }
 
-
-    /// <summary>
-    /// Opens and closes the upgrade menu when called.
-    /// </summary>
+    // Opens and closes the upgrade menu when called.
     public void UpgradesMenu()
     {
         if (isUpgrading) //If you are upgrading, then it will now be turned off
@@ -109,9 +99,7 @@ public class MenuManager : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Opens and closes the pause menu when called.
-    /// </summary>
+    // Opens and closes the pause menu when called.
     public void PauseMenu()
     {
         if (isPaused)
@@ -138,9 +126,7 @@ public class MenuManager : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Opens and closes the information menu when called.
-    /// </summary>
+    // Opens and closes the information menu when called.
     public void InfoMenu()
     {
         if (isInforming)
@@ -158,9 +144,7 @@ public class MenuManager : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Pauses the game when called
-    /// </summary>
+    // Pauses the game when called
     public void PauseGame()
     {
         Time.timeScale = 0f; //Stops the game

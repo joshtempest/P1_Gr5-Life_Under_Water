@@ -5,6 +5,9 @@ using System.IO;
 using UnityEngine;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 
+/// <summary>
+/// This script controls everything related to the player. This includes score, size, upgrade handling and sprite controls.
+/// </summary>
 public class PlayerManager : MonoBehaviour
 {
     //Loosly based on "How to make an object follow the mouse in Unity" by Karolio: https://www.youtube.com/watch?v=mF_BB_YsyDk
@@ -41,10 +44,7 @@ public class PlayerManager : MonoBehaviour
         rb = this.GetComponent<Rigidbody2D>();
     }
 
-    /// <summary>
-    /// This function deals with everything happening when the player collides with an object.
-    /// </summary>
-    /// <param name="other"></param>
+    // This function deals with everything happening when the player collides with an object.
     private void OnTriggerEnter2D(Collider2D other)
     {
         // If collided object have the tag "Object".
@@ -111,12 +111,7 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// This method is responsible for calculating the new score based on the given parameters.
-    /// </summary>
-    /// <param name="scoreArgument"></param>
-    /// <param name="pointArgument"></param>
-    /// <returns></returns>
+    // This method is responsible for calculating the new score based on the given parameters.
     int ComputeScore(int scoreArgument, int pointArgument)
     {
         int computedScore = scoreArgument + (pointArgument * growthMultiplier);
@@ -124,9 +119,7 @@ public class PlayerManager : MonoBehaviour
         return computedScore;
     }
 
-    /// <summary>
-    /// This function is responsible for adjusting the size of the player object
-    /// </summary>
+    // This function is responsible for adjusting the size of the player object
     void SizeController() 
     {
         playerSize = 3 + ((float)score / (float)sizeIncrement); // Determines the size of the player object. Devides score by sizeUp to control growth of the player object
@@ -148,9 +141,7 @@ public class PlayerManager : MonoBehaviour
         rb.AddForce(direction * speed * Time.fixedDeltaTime, ForceMode2D.Force);
     }
 
-    /// <summary>
-    /// This is the function that buys increased speed when pushing the button in the upgrade menu.
-    /// </summary>
+    // This is the function that buys increased speed when pushing the button in the upgrade menu.
     public void BuyMoreSpeed()
     {
         float[] info = new float[2]; //An array to get both the new score and the new speed.
@@ -161,13 +152,11 @@ public class PlayerManager : MonoBehaviour
         speed = info[1]; //Changes the speed to the new value.
     }
 
-    /// <summary>
-    /// This is the function that buys increased growth when pushing the button in the upgrade menu.
-    /// </summary>
+    // This is the function that buys increased growth when pushing the button in the upgrade menu.
     public void BuyMoreGrowth()
     {
         int[] info; //An array to get both the new score and the new size increment.
-        info = upgradeManagement.IncreaseGrowth(score,sizeIncrement, growthMultiplier); //Calls "IncreaseGrowth" and contains the info in the array.
+        info = upgradeManagement.IncreaseGrowth(score, sizeIncrement, growthMultiplier); //Calls "IncreaseGrowth" and contains the info in the array.
         score = info[0]; //Changes the score to the new value.
         menuManager.SetScoreText(score); //Sets the score text.
         SizeController(); //Making sure the size of the player matches the new score.
@@ -175,9 +164,7 @@ public class PlayerManager : MonoBehaviour
         growthMultiplier = info[2];
     }
 
-    /// <summary>
-    /// This function controls when the player sprite should change in relation to the score.
-    /// </summary>
+    // This function controls when the player sprite should change in relation to the score.
     private void SpriteController()
     {
         if (score < sizeLimits[0]) //Changes the sprite if score is under the first limit
