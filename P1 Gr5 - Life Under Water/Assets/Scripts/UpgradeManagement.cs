@@ -4,6 +4,9 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SocialPlatforms.Impl;
 
+/// <summary>
+/// This script controls everything related to the upgrading menu itself.
+/// </summary>
 public class UpgradeManagement : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI speedPriceText; //The text showing the price for more speed.
