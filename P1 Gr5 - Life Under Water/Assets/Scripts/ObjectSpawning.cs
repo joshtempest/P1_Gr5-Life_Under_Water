@@ -40,7 +40,7 @@ public class ObjectSpawning : MonoBehaviour
 
             Vector3 spawnPosition = new Vector3(x, y, 0);
 
-            float fdistance = sharedBehavior.CalculateFloatDistance(this.transform.position); // Calculates the distance to the player as a float.
+            float fdistance = sharedBehavior.CalculateFloatDistance(spawnPosition); // Calculates the distance to the player as a float.
 
             if (fdistance > minDistanceFromPlayer) // Spawns object if the distance to the player is great enough.
             {
